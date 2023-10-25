@@ -53,11 +53,11 @@ jobs:
         run: |
           cd docs_perm && make HTMLCOPYDIR=../docs html && touch ../docs/.nojekyll
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
-        with:
-          branch: main
-          # folder: site
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@4.1.1
+      #   with:
+      #     branch: main
+      #     # folder: site
           
   # Build job
   build:
