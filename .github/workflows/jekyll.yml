@@ -51,7 +51,7 @@ jobs:
 
       - name: Build docs
         run: |
-          cd docs && make HTMLCOPYDIR=../site/docs html && touch ../site/docs/.nojekyll
+          cd docs_perm && make HTMLCOPYDIR=../docs html && touch ../docs/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
