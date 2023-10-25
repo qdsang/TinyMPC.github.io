@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+// Bootstrap variables
+@import "tinympc/variables";
+
+// Bootstrap itself
+@import "bootstrap";
+
+// Import partials.
+@import "tinympc/base";
+@import "tinympc/layout";
+@import "tinympc/highlight";
