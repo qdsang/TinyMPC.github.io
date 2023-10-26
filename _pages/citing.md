@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Citing OSQP
+title: Citing TinyMPC
 shorttitle: Citing
 permalink: /citing/
 group: "navigation"
@@ -14,10 +14,9 @@ If you use TinyMPC for published work, we encourage you to
 
 <!-- We are looking forward to hearing your success stories with OSQP! Please [share them with us](mailto:bartolomeo.stellato@gmail.com). -->
 
+The TinyMPC paper is available [here](link_tbd).
 
-#### Main paper
-Main algorithm description, derivation and benchmark available in this [paper](https://web.stanford.edu/~boyd/papers/pdf/osqp.pdf).
-
+<!-- 
 {% raw %}
 ```latex
 @article{osqp,
@@ -32,4 +31,4 @@ Main algorithm description, derivation and benchmark available in this [paper](h
   url     = {https://doi.org/10.1007/s12532-020-00179-2},
 }
 ```
-{% endraw %}
+{% endraw %} -->

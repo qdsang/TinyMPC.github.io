@@ -28,37 +28,37 @@ concurrency:
 
 jobs:
 
-  build_docs:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: [3.9]
+  # build_docs:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       python: [3.9]
 
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: main
-          lfs: false
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         ref: main
+  #         lfs: false
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python }}
+  #     - name: Setup Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: ${{ matrix.python }}
 
-      - name: Install Python dependencies
-        run: |
-          pip install sphinx sphinx-rtd-theme breathe
+  #     - name: Install Python dependencies
+  #       run: |
+  #         pip install sphinx sphinx-rtd-theme breathe
 
-      - name: Build docs
-        run: |
-          cd docs_perm && make HTMLCOPYDIR=../docs html && touch ../docs/.nojekyll
+  #     - name: Build docs
+  #       run: |
+  #         cd docs_perm && make HTMLCOPYDIR=../docs html && touch ../docs/.nojekyll
 
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@4.1.1
-      #   with:
-      #     branch: main
-      #     # folder: site
-          
+  #     # - name: Deploy
+  #     #   uses: JamesIves/github-pages-deploy-action@4.1.1
+  #     #   with:
+  #     #     branch: main
+  #     #     # folder: site
+      
   # Build job
   build:
     runs-on: ubuntu-latest
