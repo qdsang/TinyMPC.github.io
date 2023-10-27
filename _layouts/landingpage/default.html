@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+  {%- include landingpage/head.html -%}
 
   <body class="d-flex flex-column landing-body">
 
-    {%- include navbar.html -%}
+    {%- include landingpage/navbar.html -%}
 
     <main class="flex-grow">
         {{ content }}
     </main>
 
-    {%- include footer.html -%}
+    {%- include landingpage/footer.html -%}
 
   </body>
 
