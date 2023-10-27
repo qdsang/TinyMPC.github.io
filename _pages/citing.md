@@ -1,11 +1,13 @@
 ---
-layout: page
+layout: docs/default
 title: Citing TinyMPC
 shorttitle: Citing
-permalink: /citing/
+permalink: /docs/citing/
 group: "navigation"
 order: 1
 ---
+
+# Citing TinyMPC
 
 If you use TinyMPC for published work, we encourage you to
 

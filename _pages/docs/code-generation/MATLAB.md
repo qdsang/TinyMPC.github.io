@@ -6,4 +6,4 @@ nav_order: 1
 ---
 
 
-# MATLAB CodeGen Explanation
+## MATLAB CodeGen Explanation

@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: docs/default
 title: Python
 parent: Car
-nav_order: 1
+grand_parent: Examples
 ---
 
 
-# Trajectory Tracking with Car using Python
+## Trajectory Tracking with Car using Python

@@ -1,8 +1,7 @@
 ---
-layout: default
 title: Car
+layout: docs/default
 parent: Examples
-nav_order: 3
 has_children: true
 ---
 

@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: docs/default
 title: MATLAB
 parent: Car
-nav_order: 1
+grand_parent: Examples
 ---
 
 
-# Trajectory Tracking with Car using MATLAB
+## Trajectory Tracking with Car using MATLAB

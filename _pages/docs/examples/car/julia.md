@@ -1,9 +1,9 @@
 ---
-layout: default
 title: Julia
+layout: docs/default
 parent: Car
-nav_order: 1
+grand_parent: Examples
 ---
 
 
-# Trajectory Tracking with Car using Julia
+## Trajectory Tracking with Car using Julia

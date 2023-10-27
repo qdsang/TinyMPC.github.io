@@ -1,5 +1,5 @@
 {%- comment -%}
-  Include as: {%- include head.html -%}
+  Include as: {%- include docs/head.html -%}
   Depends on: site.ga_tracking, site.ga_tracking_anonymize_ip,
     site.search_enabled, site.static_files, site.favicon_ico.
   Results in: HTML for the head element.
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/just-the-docs-head-nav.css' | relative_url }}" id="jtd-head-nav-stylesheet">
 
   <style id="jtd-nav-activation">
-  {% include css/activation.scss.liquid %}
+  {% include docs/css/activation.scss.liquid %}
   </style>
 
   {% if site.ga_tracking != nil %}
@@ -44,10 +44,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% include_cached favicon.html %}
+  {% include_cached docs/favicon.html %}
 
   {% seo %}
 
-  {% include head_custom.html %}
+  {% include docs/head_custom.html %}
 
 </head>

@@ -5,10 +5,10 @@ layout: table_wrappers
 <!DOCTYPE html>
 
 <html lang="{{ site.lang | default: 'en-US' }}">
-{% include head.html %}
+{% include docs/head.html %}
 <body>
   <a class="skip-to-main" href="#main-content">Skip to main content</a>
-  {% include icons/icons.html %}
+  {% include docs/icons/icons.html %}
   {% include docs/components/sidebar.html %}
   <div class="main" id="top">
     {% include docs/components/header.html %}
@@ -17,7 +17,7 @@ layout: table_wrappers
       <div id="main-content" class="main-content">
         <main>
           {% if site.heading_anchors != false %}
-            {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
+            {% include docs/vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
           {% else %}
             {{ content }}
           {% endif %}

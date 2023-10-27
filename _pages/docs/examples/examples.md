@@ -1,8 +1,8 @@
 ---
-layout: page
-title: "Examples"
-permalink: /Examples
-has_children: true
+title: Examples
+layout: docs/default
 nav_order: 3
+has_children: true
 ---
 
+# Examples

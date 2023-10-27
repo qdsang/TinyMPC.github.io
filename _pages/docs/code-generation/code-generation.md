@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs/default
 title: Code Generation
-nav_order: 1
+nav_order: 2
 has_children: true
 permalink: /docs/code-generation
 ---

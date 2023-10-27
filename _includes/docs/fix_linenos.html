@@ -34,7 +34,7 @@ USAGE
 Some code
 {% endhighlight %}
 {% endcapture %}
-{% include fix_linenos.html code=some_var %}
+{% include docs/fix_linenos.html code=some_var %}
 
 For code fences:
 
@@ -44,7 +44,7 @@ Some code
 ```
 {% endcapture %}
 {% assign some_var = some_var | markdownify %}
-{% include fix_linenos.html code=some_var %}
+{% include docs/fix_linenos.html code=some_var %}
 
 CAVEATS
 
