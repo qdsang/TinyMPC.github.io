@@ -3,7 +3,6 @@ layout: docs/default
 title: Code Generation
 nav_order: 2
 has_children: true
-permalink: /docs/code-generation
 ---
 
 # Code Generation
