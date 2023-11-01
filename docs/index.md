@@ -6,7 +6,7 @@ nav_order: 1
 permalink: /docs/
 ---
 
-<img src="../assets/images/logo1.png" width=620 />
+<img src="../assets/images/logo2.png" width=620 />
 
 # **TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers**
 
