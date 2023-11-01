@@ -76,3 +76,5 @@ callouts:
   warning:
     title: Warning
     color: red
+
+# logo: "/assets/images/logo.png"

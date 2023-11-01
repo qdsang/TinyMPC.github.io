@@ -11,7 +11,7 @@ This website is under construction. It is heavily based on OSQP website.
 
 # TinyMPC Solver Documentation
 
-[Visit our GitHub Discussions page](https://github.com/orgs/TinyMPC/discussions) for any questions related to the solver!
+[Visit our GitHub Discussions page](https://github.com/orgs/TinyMPC/discussions){:target="_blank"} for any questions related to the solver!
 
 The TinyMPC solver is a numerical optimization package for solving convex quadratic model-predictive control programs in the default form
 
@@ -27,16 +27,16 @@ $$
 
 where $$x_k \in \mathbb{R}^n$$, $$u_k \in \mathbb{R}^m$$ are the state and control input at time step $$k$$, $$N$$ is the number of time steps (also referred to as the horizon), $$A \in \mathbb{R}^{n \times n}$$ and $$B \in \mathbb{R}^{n \times m}$$ define the system dynamics, $$Q \succeq 0$$, $$R \succ 0$$, and $$Q_f \succeq 0$$ are symmetric cost weight matrices and $$\bar{x}_k$$ and $$\bar{u}_k$$ are state and input reference trajectories.
 
-**Code available on** [GitHub](https://github.com/tinympc/tinympc).
+**Code available on** [GitHub](https://github.com/tinympc/tinympc){:target="_blank"}.
 
 ## Citing TinyMPC
 
 If you are using TinyMPC for your work, we encourage you to
 
 * [Cite the related papers](citing)
-* Put a star on [GitHub](https://github.com/TinyMPC/TinyMPC)
+* Put a star on [GitHub](https://github.com/TinyMPC/TinyMPC){:target="_blank"}
 
-**We are looking forward to hearing your success stories with TinyMPC!** Please [share them with us](khai.nx1201@gmail.com).
+**We are looking forward to hearing your success stories with TinyMPC!** Please [share them with us](mailto:khai.nx1201@gmail.com){:target="_blank"}.
 
 ## Features (Expected)
 
@@ -76,15 +76,15 @@ TinyMPC is distributed under the [Apache 2.0 License](https://www.apache.org/lic
 
 The following people have been involved in the development of TinyMPC:
 
-* [Khai Nguyen]( https://xkhainguyen.github.io/) (Carnegie Mellon University): main developer
-* [Sam Schoedel](https://samschoedel.com/) (Carnegie Mellon University): main developer
-* [Anoushka Alavilli](https://www.linkedin.com/in/anoushka-alavilli-89586b178/) (Carnegie Mellon University): main developer
-* [Zachary Manchester](https://www.linkedin.com/in/zacmanchester/) (Carnegie Mellon University): advisor
-* [Brian Plancher](https://brianplancher.com/) (Barnard College): advisor
+* [Khai Nguyen]( https://xkhainguyen.github.io/){:target="_blank"} (Carnegie Mellon University): main developer
+* [Sam Schoedel](https://samschoedel.com/){:target="_blank"} (Carnegie Mellon University): main developer
+* [Anoushka Alavilli](https://www.linkedin.com/in/anoushka-alavilli-89586b178/){:target="_blank"} (Carnegie Mellon University): main developer
+* [Zachary Manchester](https://www.linkedin.com/in/zacmanchester/){:target="_blank"} (Carnegie Mellon University): advisor
+* [Brian Plancher](https://brianplancher.com/){:target="_blank"} (Barnard College): advisor
 
 ## Bug reports and support
 
-Please report any issues via the [Github issue tracker](https://github.com/tinympc/tinympc/issues). All types of issues are welcome including bug reports, documentation typos, feature requests and so on.
+Please report any issues via the [Github issue tracker](https://github.com/tinympc/tinympc/issues){:target="_blank"}. All types of issues are welcome including bug reports, documentation typos, feature requests and so on.
 
 ## Numerical benchmarks
 
