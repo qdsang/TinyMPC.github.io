@@ -1,9 +1,10 @@
 ---
 layout: default
-title: MATLAB
+title: Matlab
 parent: Get Started
 nav_order: 1
 ---
 
 
-## MATLAB CodeGen Explanation
+# Matlab
+

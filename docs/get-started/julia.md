@@ -5,5 +5,4 @@ parent: Get Started
 nav_order: 1
 ---
 
-
-## Julia CodeGen Explanation
+# Julia

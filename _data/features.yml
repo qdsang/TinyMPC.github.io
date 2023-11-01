@@ -1,19 +1,18 @@
 - title: Efficient
   icon: fas fa-tachometer-alt
   description: >
-    TinyMPC uses a specialized ADMM-based first-order method with custom sparse linear
-    algebra routines that exploit structure in problem data.
+    TinyMPC uses a specialized ADMM-based method that exploits structure of the MPC problem via Riccati recursion.
 
 - title: Robust
   icon: fas fa-cogs
   description: >
-    The algorithm is absolutely division free after the setup and it requires no
+    The algorithm is absolutely division free it requires no
     assumptions on problem data (the problem only needs to be convex). It just works!
 
 - title: Free
   icon: fas fa-heart
   description: >
-    TinyMPC is free and will always be free for everyone. Its license is Apache 2.0.
+    TinyMPC is free and will always be free for everyone. It is under the MIT license.
 
 - title: Embeddable
   icon: fas fa-microchip
@@ -21,12 +20,12 @@
     TinyMPC has an easy interface to generate customized embeddable C code with no memory manager required.
 
 
-- title: Many interfaces
+- title: Multi-interface
   icon: far fa-hand-pointer
   description: >
-    TinyMPC supports many interfaces including C/C++, Fortran, Matlab, Python, R, Julia, Rust.
+    TinyMPC supports many interfaces including C/C++, Matlab, Python, Julia.
 
-- title: Library-free
+- title: Dependency-minimal
   icon: fas fa-dove
   description: >
-    TinyMPC is self-contained and requires no external library to run.
+    TinyMPC only needs Eigen to run.
