@@ -75,3 +75,17 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 <iframe width="840" height="473" src="../assets/videos/favoid.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
+
+## BibTeX
+{% raw %}
+```latex
+@misc{tinympc,
+      title={TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers}, 
+      author={Anoushka Alavilli and Khai Nguyen and Sam Schoedel and Brian Plancher and Zachary Manchester},
+      year={2023},
+      eprint={2310.16985},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
+{% endraw %}
