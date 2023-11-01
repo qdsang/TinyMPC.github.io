@@ -8,21 +8,21 @@ permalink: /docs/
 
 # **TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers**
 
-[Anoushka Alavilli* ](https://www.linkedin.com/in/anoushka-alavilli-89586b178/),
-[Khai Nguyen* ](https://xkhainguyen.github.io/), 
-[Sam Schoedel* ](https://samschoedel.com/), 
-[Brian Plancher ](https://brianplancher.com/), 
-[Zachary Manchester ](https://www.linkedin.com/in/zacmanchester/)
+[Anoushka Alavilli* ](https://www.linkedin.com/in/anoushka-alavilli-89586b178/){:target="_blank"},
+[Khai Nguyen* ](https://xkhainguyen.github.io/){:target="_blank"}, 
+[Sam Schoedel* ](https://samschoedel.com/){:target="_blank"}, 
+[Brian Plancher ](https://brianplancher.com/){:target="_blank"}, 
+[Zachary Manchester ](https://www.linkedin.com/in/zacmanchester/){:target="_blank"}
 
 **Carnegie Mellon University, Barnard College**
 
 <sup>*Equal contribution and alphabetically ordered</sup>
 
-[Paper](/docs/){: .btn }
-[arXiv](https://arxiv.org/abs/2310.16985){: .btn }
-[Video](/docs/){: .btn }
-[Summary](/docs/){: .btn }
-[Code](https://github.com/tinympc/tinympc){: .btn }
+[Paper](/docs/){:target="_blank"}{: .btn }
+[arXiv](https://arxiv.org/abs/2310.16985){:target="_blank"}{: .btn }
+[Video](/docs/){:target="_blank"}{: .btn }
+[Summary](/docs/){:target="_blank"}{: .btn }
+[Code](https://github.com/tinympc/tinympc){:target="_blank"}{: .btn }
 
 ---
 
