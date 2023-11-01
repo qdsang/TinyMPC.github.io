@@ -9,15 +9,11 @@ order: 1
 
 # Citing TinyMPC
 
-If you use TinyMPC for published work, we encourage you to
+If you use TinyMPC for published work, we encourage you to put a star on GitHub and cite the accompanying papers:
 
-* Cite the accompanying papers
-* Put a star on <a class="github-button" href="https://github.com/TinyMPC/TinyMPC" data-size="large" data-show-count="true" aria-label="Star TinyMPC/TinyMPC on GitHub">GitHub</a>
+## Main paper
 
-<!-- We are looking forward to hearing your success stories with OSQP! Please [share them with us](mailto:bartolomeo.stellato@gmail.com). -->
-
-The TinyMPC paper is available [here](https://arxiv.org/abs/2310.16985).
-
+Main algorithm description, derivation and benchmark available in this [paper](https://arxiv.org/abs/2310.16985).
 
 {% raw %}
 ```latex
