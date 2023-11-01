@@ -18,7 +18,11 @@ permalink: /docs/
 
 <sup>*Equal contribution and alphabetically ordered</sup>
 
-[Paper]() \| [arXiv]() \| [Video]() \| [Summary]() \| [Code]()
+[Paper](https://just-the-docs.com){: .btn }
+[arXiv](https://just-the-docs.com){: .btn }
+[Video](https://just-the-docs.com){: .btn }
+[Summary](https://just-the-docs.com){: .btn }
+[Code](https://just-the-docs.com){: .btn }
 
 ## Abstract
 
