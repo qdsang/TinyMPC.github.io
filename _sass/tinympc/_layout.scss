@@ -48,6 +48,7 @@ body {
 }
 
 #tinympcascii {
+    padding-left: 5%;
     width: 60%;
 }
 
@@ -94,7 +95,7 @@ body {
 // The board
 .home-section-1 {
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 0rem;
     text-align: center;
     @include media-breakpoint-up(md) {
     p {
@@ -108,9 +109,9 @@ body {
     padding-bottom: 5rem;
     text-align: center;
     @include media-breakpoint-up(md) {
-    p {
-        font-size:.9rem;
-    }
+        p {
+            font-size:.9rem;
+        }
     }
 }
 
