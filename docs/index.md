@@ -56,25 +56,41 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 ## Medium-Pace Figure-8 Tracking
 
-<iframe width="840" height="473" src="../assets/videos/fig81.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="840" height="473" src="../assets/videos/fig81.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+<video width="100%" preload="auto" muted autoplay controls loop>
+    <source src="../assets/videos/fig81.mp4" type="video/mp4">
+</video>
 
 ---
 
 ## Fast-Pace Figure-8 Tracking
 
-<iframe width="840" height="473" src="../assets/videos/fig82.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="840" height="473" src="../assets/videos/fig82.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+<video width="100%" preload="auto" muted autoplay controls loop>
+    <source src="../assets/videos/fig82.mp4" type="video/mp4">
+</video>
 
 ---
 
 ## Extreme Pose Recovery
 
-<iframe width="840" height="473" src="../assets/videos/fextreme.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="840" height="473" src="../assets/videos/fextreme.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+<video width="100%" preload="auto" muted autoplay controls loop>
+    <source src="../assets/videos/fextreme.mp4" type="video/mp4">
+</video>
 
 ---
 
 ## Dynamic Obstacle Avoidance
 
-<iframe width="840" height="473" src="../assets/videos/favoid.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="840" height="473" src="../assets/videos/favoid.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+<video width="100%" preload="auto" muted autoplay controls loop>
+    <source src="../assets/videos/favoid.mp4" type="video/mp4">
+</video>
 
 ---
 
