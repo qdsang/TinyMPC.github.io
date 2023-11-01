@@ -47,6 +47,10 @@ body {
     background: map-get($theme-colors, "dark");
 }
 
+#tinympcascii {
+    width: 60%;
+}
+
 .flex-grow {
     flex: 1;
 }
@@ -73,7 +77,7 @@ body {
 
 
 // Footer copyright
-.copyright{
+.copyright {
     font-size: .7rem;
     text-align: right;
     a, a:visited {
@@ -88,7 +92,7 @@ body {
 
 // Features
 // The board
-.home-section-1{
+.home-section-1 {
     padding-top: 5rem;
     padding-bottom: 5rem;
     text-align: center;
@@ -99,7 +103,7 @@ body {
     }
 }
 
-.home-section-2{
+.home-section-2 {
     padding-top: 0rem;
     padding-bottom: 5rem;
     text-align: center;
@@ -156,7 +160,7 @@ text-align: left;
     -o-filter:      grayscale(100%);
 }
 
-#particles-js{
+#particles-js {
     background: #224873;
     z-index: -10;
     position: absolute;
