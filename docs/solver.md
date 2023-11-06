@@ -76,11 +76,11 @@ TinyMPC is distributed under the [Apache 2.0 License](https://www.apache.org/lic
 
 The following people have been involved in the development of TinyMPC:
 
+* [Anoushka Alavilli](https://www.linkedin.com/in/anoushka-alavilli-89586b178/){:target="_blank"} (Carnegie Mellon University): main developer
 * [Khai Nguyen]( https://xkhainguyen.github.io/){:target="_blank"} (Carnegie Mellon University): main developer
 * [Sam Schoedel](https://samschoedel.com/){:target="_blank"} (Carnegie Mellon University): main developer
-* [Anoushka Alavilli](https://www.linkedin.com/in/anoushka-alavilli-89586b178/){:target="_blank"} (Carnegie Mellon University): main developer
-* [Zachary Manchester](https://www.linkedin.com/in/zacmanchester/){:target="_blank"} (Carnegie Mellon University): advisor
 * [Brian Plancher](https://brianplancher.com/){:target="_blank"} (Barnard College): advisor
+* [Zachary Manchester](https://www.linkedin.com/in/zacmanchester/){:target="_blank"} (Carnegie Mellon University): advisor
 
 ## Bug reports and support
 
