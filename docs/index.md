@@ -22,9 +22,13 @@ permalink: /docs/
 
 [Paper](/docs/){:target="_blank"}{: .btn }
 [arXiv](https://arxiv.org/abs/2310.16985){:target="_blank"}{: .btn }
-[Video](/docs/){:target="_blank"}{: .btn }
+[Video](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank"}{: .btn }
 [Summary](/docs/){:target="_blank"}{: .btn }
 [Code](https://github.com/tinympc/tinympc){:target="_blank"}{: .btn }
+
+---
+
+<iframe height="400" src="https://www.youtube.com/embed/NKOrRyhcr6w" title="YouTube video player" frameborder="0" style="border: 0px solid #bbb; border-radius: 10px; width: 100%;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 ---
 
@@ -34,7 +38,7 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 ---
 
-## Hardware Comparison
+## Robot Hardware Comparison
 
 ![Hardware Comparison](../assets/images/hardware_comp2.png)
 
@@ -42,7 +46,7 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 ---
 
-## Microcontroller Benchmarks ↓
+## Microcontroller Benchmarks on Teensy ↓
 
 ![Microcontroller Benchmarks](../assets/images/mcu_bench.png)
 
@@ -58,7 +62,7 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 <!-- <iframe width="840" height="473" src="../assets/videos/fig81.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-<video width="100%" preload="auto" muted autoplay controls loop>
+<video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="../assets/videos/fig81.mp4" type="video/mp4">
 </video>
 
@@ -68,7 +72,7 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 <!-- <iframe width="840" height="473" src="../assets/videos/fig82.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-<video width="100%" preload="auto" muted autoplay controls loop>
+<video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="../assets/videos/fig82.mp4" type="video/mp4">
 </video>
 
@@ -78,7 +82,7 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 <!-- <iframe width="840" height="473" src="../assets/videos/fextreme.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-<video width="100%" preload="auto" muted autoplay controls loop>
+<video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="../assets/videos/fextreme.mp4" type="video/mp4">
 </video>
 
@@ -88,7 +92,7 @@ Model-predictive control (MPC) is a powerful tool for controlling highly dynamic
 
 <!-- <iframe width="840" height="473" src="../assets/videos/favoid.mp4" title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-<video width="100%" preload="auto" muted autoplay controls loop>
+<video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="../assets/videos/favoid.mp4" type="video/mp4">
 </video>
 
