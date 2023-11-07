@@ -7,7 +7,7 @@ nav_order: 2
 ---
 
 {: .warning }
-This website is under construction. It is heavily based on OSQP website.
+This website is under construction. It is deeply inspired by OSQP.
 
 # TinyMPC Solver Documentation
 
@@ -88,4 +88,4 @@ Please report any issues via the [Github issue tracker](https://github.com/tinym
 
 ## Numerical benchmarks
 
-Numerical benchmarks against other solvers on microcontrollers are available here.
+Numerical benchmarks against other solvers on microcontrollers are available soon.
