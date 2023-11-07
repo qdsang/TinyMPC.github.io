@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 title: Python
 parent: Car
 grand_parent: Examples

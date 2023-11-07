@@ -1,6 +1,6 @@
 ---
 title: Julia
-layout: docs/default
+layout: default
 parent: Car
 grand_parent: Examples
 ---

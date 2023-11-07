@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 title: Code Generation
 nav_order: 5
 has_children: true

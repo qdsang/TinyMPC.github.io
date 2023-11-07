@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 math: mathjax
 title: Home
 nav_order: 1

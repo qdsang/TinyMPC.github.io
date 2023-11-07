@@ -1,5 +1,5 @@
 <!-- ---
-layout: docs/default
+layout: default
 title: CHANGELOG
 nav_order: 10
 ---
