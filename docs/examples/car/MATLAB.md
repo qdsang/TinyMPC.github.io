@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 title: MATLAB
 parent: Car
 grand_parent: Examples

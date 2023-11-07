@@ -1,6 +1,6 @@
 <!-- ---
 title: Car
-layout: docs/default
+layout: default
 parent: Examples
 has_children: true
 ---

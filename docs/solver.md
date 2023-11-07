@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 math: mathjax
 title: The Solver
 nav_order: 2

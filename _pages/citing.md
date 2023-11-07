@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 title: Citing TinyMPC
 shorttitle: Citing
 permalink: /docs/citing/

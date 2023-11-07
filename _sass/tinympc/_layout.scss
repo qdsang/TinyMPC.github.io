@@ -219,3 +219,13 @@ img {
     object-fit: fill;
     display: block;
 } */
+
+
+.flex-container-nav-footer {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-child-nav-footer-credits {
+    flex: 1;
+}

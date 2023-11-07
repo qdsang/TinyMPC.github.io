@@ -1,5 +1,5 @@
 ---
-layout: docs/default
+layout: default
 title: Interfaces
 nav_order: 4
 has_children: true
