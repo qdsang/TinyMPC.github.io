@@ -207,3 +207,20 @@ body {
   height: $sp-5;
   color: $link-color;
 }
+
+.page-footer a {
+  color: $link-color;
+}
+
+
+.nav-footer-credits-container {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+.nav-footer-toggle-button {
+  position: absolute;
+  right: 0;
+}

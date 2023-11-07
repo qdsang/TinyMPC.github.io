@@ -1,16 +1,25 @@
+$tinympc-blue: #576886 !default;
+$tinympc-dark-blue: rgb(37, 76, 139) !default;
+$tinympc-pink: #e6b7a7 !default;
+$tinympc-orange: #f4d899 !default;
+$tinympc-yellow: #efe9c3 !default;
+
 $color-scheme: light !default;
 $body-background-color: $white !default;
-$body-heading-color: $grey-dk-300 !default;
-$body-text-color: $grey-dk-100 !default;
-$link-color: $purple-000 !default;
-$nav-child-link-color: $grey-dk-100 !default;
-$sidebar-color: $grey-lt-000 !default;
-$base-button-color: #f7f7f7 !default;
-$btn-primary-color: $purple-100 !default;
+$body-heading-color: black !default;
+$body-text-color: $grey-dk-200 !default;
+$link-color: $tinympc-dark-blue !default;
+$nav-link-color: $grey-lt-100 !default;
+$nav-child-link-color: $grey-lt-400 !default;
+$sidebar-color: $tinympc-blue !default;
+$base-button-color: $grey-lt-300 !default;
+$btn-primary-color: blue !default;
 $code-background-color: $grey-lt-000 !default;
 $feedback-color: darken($sidebar-color, 3%) !default;
 $table-background-color: $white !default;
 $search-background-color: $white !default;
 $search-result-preview-color: $grey-dk-000 !default;
+$border-color: $grey-dk-000;
+$button-focus-color: $tinympc-blue !default;
 
 @import "./vendor/OneLightJekyll/syntax";

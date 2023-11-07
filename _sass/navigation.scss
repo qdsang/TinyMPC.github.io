@@ -18,6 +18,7 @@
     }
 
     .nav-list-link {
+      color: $nav-link-color;
       display: block;
       min-height: $nav-list-item-height-sm;
       padding-top: $sp-1;
@@ -74,7 +75,7 @@
       width: $nav-list-item-height-sm;
       height: $nav-list-item-height-sm;
       padding: #{$nav-list-item-height-sm * 0.25};
-      color: $link-color;
+      color: $nav-link-color;
 
       @include mq(md) {
         width: $nav-list-item-height;
@@ -159,11 +160,11 @@
 
       > .nav-list-item {
         > .nav-list-link {
-          color: $link-color;
+          color: $nav-link-color;
         }
 
         > .nav-list-expander {
-          color: $link-color;
+          color: $nav-link-color;
         }
       }
     }
@@ -195,6 +196,9 @@
   @include mq(md) {
     padding-right: $gutter-spacing-sm;
   }
+}
+.nav-footer {
+  color: $nav-link-color;
 }
 
 // Breadcrumb nav

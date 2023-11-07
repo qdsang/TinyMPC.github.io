@@ -10,11 +10,17 @@ permalink: /docs/
 
 # **TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers**
 
-[Anoushka Alavilli* ](https://www.linkedin.com/in/anoushka-alavilli-89586b178/){:target="_blank"},
+<!-- [Anoushka Alavilli* ](https://www.linkedin.com/in/anoushka-alavilli-89586b178/){:target="_blank"},
 [Khai Nguyen* ](https://xkhainguyen.github.io/){:target="_blank"}, 
 [Sam Schoedel* ](https://samschoedel.com/){:target="_blank"}, 
 [Brian Plancher ](https://brianplancher.com/){:target="_blank"}, 
-[Zachary Manchester ](https://www.linkedin.com/in/zacmanchester/){:target="_blank"}
+[Zachary Manchester ](https://www.linkedin.com/in/zacmanchester/){:target="_blank"} -->
+
+Anoushka Alavilli\*,
+Khai Nguyen\*,
+Sam Schoedel\*, 
+Brian Plancher, 
+Zachary Manchester
 
 **Carnegie Mellon University, Barnard College**
 
