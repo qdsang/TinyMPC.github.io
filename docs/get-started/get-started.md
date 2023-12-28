@@ -9,8 +9,8 @@ has_children: true
 
 To get started simply choose your language interface and follow the easy installation instructions below:
 
-* [C/C++](https://github.com/TinyMPC/TinyMPC)
-* [Python](https://github.com/TinyMPC/tinympc-python)
-* [MATLAB](https://github.com/TinyMPC/tinympc-matlab)
-* Julia
+* [C/C++](/docs/get-started/cpp/)
+* [Python](/docs/get-started/python/)
+* [MATLAB](/docs/get-started/matlab/)
+* [Julia](/docs/get-started/julia/)
 * R
