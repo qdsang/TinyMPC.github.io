@@ -88,4 +88,4 @@ Please report any issues via the [Github issue tracker](https://github.com/tinym
 
 ## Numerical benchmarks
 
-Numerical benchmarks against other solvers on microcontrollers are available soon.
+Numerical benchmarks against other solvers on microcontrollers are available at [this repository](https://github.com/RoboticExplorationLab/mcu-solver-benchmarks).

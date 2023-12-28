@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Matlab
+title: MATLAB
 parent: Get Started
 nav_order: 1
 ---

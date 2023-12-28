@@ -30,7 +30,7 @@ Zachary Manchester
 [arXiv](https://arxiv.org/abs/2310.16985){:target="_blank"}{: .btn }
 [Video](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank"}{: .btn }
 [Summary](/docs/){:target="_blank"}{: .btn }
-[Code](https://github.com/tinympc/tinympc){:target="_blank"}{: .btn }
+[Code](https://github.com/TinyMPC){:target="_blank"}{: .btn }
 
 ---
 
