@@ -2,7 +2,7 @@
 layout: default
 title: Code Generation
 nav_order: 5
-has_children: true
+has_children: no
 ---
 
 # Code Generation
@@ -20,3 +20,5 @@ It is only linked to Eigen library.
 ### Division-free
 There are no division required in the ADMM algorithm
 
+{: .note }
+Please check interactive examples in [Get Started](/docs/get-started/get-started/) for how to use code-generation in different languages.

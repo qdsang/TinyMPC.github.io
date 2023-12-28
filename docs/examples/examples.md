@@ -7,9 +7,9 @@ has_children: true
 
 # Examples
 
-## Demo
- 
-## Applications
+## Interactive Examples
+
+Interactive examples are provided in [Get Started](/docs/get-started/get-started/) in different languages.
 
 ## Real-World Deployment
 

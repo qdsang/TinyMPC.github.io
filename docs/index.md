@@ -26,7 +26,7 @@ Zachary Manchester
 
 <sup>*Equal contribution and alphabetically ordered</sup>
 
-[Paper](/docs/){:target="_blank"}{: .btn }
+[Paper](https://arxiv.org/abs/2310.16985){:target="_blank"}{: .btn }
 [arXiv](https://arxiv.org/abs/2310.16985){:target="_blank"}{: .btn }
 [Video](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank"}{: .btn }
 [Summary](/docs/){:target="_blank"}{: .btn }
