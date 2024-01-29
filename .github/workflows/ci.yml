@@ -2,7 +2,7 @@ name: ci
 on:
   push:
     branches:
-      - material_mkdocs
+      - main
 permissions:
   contents: write
 jobs:
