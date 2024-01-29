@@ -1,6 +1,6 @@
 # Welcome to MkDocs
 
-# RENOVATIONS COMING SOON
+# NEW WEBSITE COMING SOON
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
