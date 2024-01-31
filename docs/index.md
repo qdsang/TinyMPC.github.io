@@ -5,12 +5,11 @@ description: TinyMPC description and overview
 
 # Welcome to TinyMPC's documentation!
 
-[Get Started :material-arrow-right-box:](#){ .md-button } [Read the Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){ .md-button } [Watch the Video :fontawesome-brands-youtube:](https://github.com/tinympc/){ .md-button }
-
 TinyMPC is a model-predictive controller built for robots with small amounts of computational power. It's lean and fast, allowing it to run on cheap microcontrollers that have limited memory and speed.
 
+[Get Started :material-arrow-right-box:](#){.md-button} [Read the Paper :simple-arxiv:](https://arxiv.org/pdf/2310.16985.pdf){:target="_blank" .md-button} [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
-## Demos from the paper
+## Demos
 
 ### Dynamic obstacle avoidance
 
@@ -22,7 +21,7 @@ TinyMPC runs fast enough to re-linearize constraints at each time step, allowing
 
 ### Extreme pose recovery
 
-TinyMPC can handle recovering from extreme initial conditions. In this example, it is compared against three of the [Crazyflie 2.1](https://www.bitcraze.io/products/crazyflie-2-1/)'s stock controllers.
+TinyMPC can handle recovering from extreme initial conditions. In this example, it is compared against three of the [Crazyflie 2.1](https://www.bitcraze.io/products/crazyflie-2-1/){:target="_blank"}'s stock controllers. Only TinyMPC was able to keep the control inputs under the drone's limits, and the recovery looks pretty good!
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/fextreme.mp4" type="video/mp4">
@@ -35,9 +34,3 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/fig82.mp4" type="video/mp4">
 </video>
-
-# How it works
-
-TinyMPC's trick is to precompute expensive matrices offline so that only a small amount of computation is required during operation.
-
-The underlying algorithm is the [Alternating Direction Method of Multipliers (ADMM)](https://stanford.edu/~boyd/admm.html), which cycles through four main steps, the 
