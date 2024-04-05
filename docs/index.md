@@ -8,15 +8,15 @@ description: TinyMPC description and overview
 TinyMPC is a model-predictive controller built for robots with small amounts of computational power. It's lean and fast, allowing it to run on cheap microcontrollers that have limited memory and speed.
 
 [Get Started :material-arrow-right-box:](#){.md-button}
-[Original Paper :simple-arxiv:](https://arxiv.org/pdf/2310.16985.pdf){:target="_blank" .md-button}
-[Conic Code Gen Paper :simple-arxiv:](https://arxiv.org/pdf/2403.18149.pdf){:target="_blank" .md-button}
+[ICRA Paper :simple-arxiv:](https://arxiv.org/pdf/2310.16985.pdf){:target="_blank" .md-button}
+[CDC Paper :simple-arxiv:](https://arxiv.org/pdf/2403.18149.pdf){:target="_blank" .md-button}
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
-## Demos
+## Robot Demonstrations
 
 ### Dynamic obstacle avoidance
 
-TinyMPC runs fast enough to re-linearize constraints at each time step, allowing it to reason about moving obstacles, as it is doing in both videos. The algorithm can additionally handle any number of arbitrary constraints. On the right, for example, it is avoiding the end of the stick while staying in the yz plane.
+TinyMPC runs fast enough to enable re-linearizing constraints at each time step, allowing it to reason about moving obstacles, as it is doing in both videos. The algorithm can additionally handle any number of arbitrary linear constraints. On the right, for example, it is avoiding the end of the stick while staying in the yz plane.
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/favoid.mp4" type="video/mp4">
@@ -24,7 +24,7 @@ TinyMPC runs fast enough to re-linearize constraints at each time step, allowing
 
 ### Extreme pose recovery
 
-TinyMPC can handle recovering from extreme initial conditions. In this example, it is compared against three of the [Crazyflie 2.1](https://www.bitcraze.io/products/crazyflie-2-1/){:target="_blank"}'s stock controllers. Only TinyMPC was able to keep the control inputs under the drone's limits, and the recovery looks pretty good!
+TinyMPC can enable recovering from extreme initial conditions. In this example, it is compared against three of the [Crazyflie 2.1](https://www.bitcraze.io/products/crazyflie-2-1/){:target="_blank"}'s stock controllers. Only TinyMPC was able to keep the control inputs under the drone's limits, and the recovery looks pretty good!
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/fextreme.mp4" type="video/mp4">

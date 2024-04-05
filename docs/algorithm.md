@@ -2,7 +2,7 @@
 title: Algorithm
 ---
 
-# Explanation of the algorithm
+# How Does TinyMPC Work?
 
 Our 2024 ICRA submission video provides a concise overview of the method:
 

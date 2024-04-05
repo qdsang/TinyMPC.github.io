@@ -3,7 +3,13 @@ title: Examples
 description: TinyMPC examples
 ---
 
-# Compilation
+# How to Use TinyMPC?
+
+We offer user-friendly interfaces in high-level languages to enable low-level C++ code generation and verification, making them ready for deployment on embedded hardware. We also provide various robotic control examples, including the Crazyflie nano-quadrotor. 
+
+Check out our GitHub repositories: [Python](https://github.com/TinyMPC/tinympc-python), [MATLAB](https://github.com/TinyMPC/tinympc-matlab), [Julia](https://github.com/TinyMPC/tinympc-julia)
+
+## Install the Library
 
 === "Python"
 
@@ -46,7 +52,9 @@ description: TinyMPC examples
     }
     ```
 
-# Problem Setup
+## Set up the Problem
+
+Check out [model](./model.md) to learn how to obtain A and B matrices.
 
 === "Cartpole"
 
@@ -184,7 +192,9 @@ description: TinyMPC examples
         ```
 
 
-# Generate
+## Generate Solver Code
+
+We generated low-level C++ code ready for deployment on embedded hardware.
 
 === "Python"
 
@@ -219,12 +229,14 @@ description: TinyMPC examples
     ```
 
 
-# Solve
+## Interact with Solver Code
+
+We can also verify our program by interacting in high-level languages before deployment. This naturally provides a convenient software-in-the-loop (SIL) testing pipeline. Below is an example of running MPC in simulation, you can use any simulators.
 
 === "Python"
 
     ``` py
-    x = [0.5, 0, 0.2, 0]  # Initial state
+    x = [0.0] * n * N  # Initial state
     u = [0.0] * m * (N - 1)  # List of control inputs in horizon
     x_all = []  # List of all stored states
     x_noise = x * 1

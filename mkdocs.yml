@@ -5,11 +5,11 @@ repo_name: TinyMPC
 
 nav:
   - index.md
-  - Explanation: 
-    - explanation.md
   - Getting Started:
     - Examples: getting-started/examples.md
-    - Linearization: getting-started/linearization.md
+    - How to obtain the model?: getting-started/model.md
+  - Algorithm: 
+    - algorithm.md
 
 theme:
   name: material
@@ -80,7 +80,7 @@ extra:
       link: https://www.youtube.com/watch?v=NKOrRyhcr6w
       name: TinyMPC on YouTube
     - icon: fontawesome/brands/github
-      link: https://github.com/TinyMPC/TinyMPC
+      link: https://github.com/TinyMPC
       name: TinyMPC on GitHub
     - icon: simple/arxiv
       link: https://arxiv.org/abs/2310.16985
