@@ -56,9 +56,9 @@ Check out our GitHub repositories: [Python](https://github.com/TinyMPC/tinympc-p
 
 Check out [model](./model.md) to learn how to obtain A and B matrices.
 
-=== "Cartpole"
+=== "Cart-pole"
 
-    For the cartpole, we use the linearized model of the discretized cartpole dynamics to stabilize about the upright position.
+    For the cart-pole, we use the linearized model of the discretized cart-pole dynamics to stabilize about the upright position.
 
     === "Python"
 
