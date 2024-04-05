@@ -9,6 +9,7 @@ nav:
     - explanation.md
   - Getting Started:
     - Examples: getting-started/examples.md
+    - Linearization: getting-started/linearization.md
 
 theme:
   name: material
@@ -69,6 +70,7 @@ theme:
 
 plugins:
   - search
+  - typeset
   # - git-revision-date-localized:
   #     enable_creation_date: true
   #     type: date
