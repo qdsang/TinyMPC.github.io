@@ -2,9 +2,9 @@
 title: Algorithm
 ---
 
-# How Does TinyMPC Work?
+# Inside TinyMPC
 
-Our 2024 ICRA submission video provides a concise overview of the method:
+TinyMPC's trick is to precompute expensive matrices offline so that only a small amount of computation is required during operation. Our 2024 ICRA submission video provides a concise overview of the method:
 
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button }
 
@@ -12,8 +12,7 @@ Our 2024 ICRA submission video provides a concise overview of the method:
     <source src="https://www.youtube.com/watch?v=NKOrRyhcr6w" type="video/mp4">
 </video> -->
 
-
-TinyMPC's trick is to precompute expensive matrices offline so that only a small amount of computation is required during operation.
+## The Algorithm
 
 The underlying algorithm is the [alternating direction method of multipliers](https://stanford.edu/~boyd/admm.html){:target="_blank"}. TinyMPC reformulates the primal update step - the part that usually takes the longest - as an [LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator){:target="_blank"}. These have been studied for decades, and we know how to write LQR problems in a closed form: specifically, using [Riccati recursion](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation){:target="_blank"}. We reorganize some of this recursive function to extract big matrices that only need to be computed once. In the vanilla implementation, this restricts TinyMPC to solving only a *linear* trajectory tracking problem (with any kinds of constraints, as long as they can be quickly re-linearized online). However, as seen in our demo videos, a single linearization can go a long way.
 

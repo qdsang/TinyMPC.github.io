@@ -7,7 +7,7 @@ nav:
   - index.md
   - Get Started:
     - Examples: get-started/examples.md
-    - How to obtain the model?: get-started/model.md
+    - Obtaining the Model: get-started/model.md
   - Algorithm: 
     - algorithm.md
 

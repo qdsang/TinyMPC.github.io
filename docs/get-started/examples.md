@@ -3,7 +3,7 @@ title: Examples
 description: TinyMPC examples
 ---
 
-# How to Use TinyMPC?
+# How to Use TinyMPC
 
 We offer user-friendly interfaces in high-level languages to enable low-level C++ code generation and verification, making them ready for deployment on embedded hardware. We also provide various robotic control examples, including the Crazyflie nano-quadrotor. 
 

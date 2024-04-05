@@ -1,7 +1,9 @@
 ---
 title: Model
-description: How to obtain the model
+description: How to linearize a system
 ---
+
+## Linearization
 
 TinyMPC in its vanilla implementation can only handle linear dynamics, which means systems must be linearized about an equilibrium before being used by the solver. Extensions to TinyMPC allow the user to approximate a system's nonlinear dynamics by storing multiple linearizations, but we will start with only one.
 
