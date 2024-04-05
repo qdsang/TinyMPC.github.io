@@ -19,7 +19,7 @@ description: TinyMPC description and overview
 
 !!! success "" 
 
-    🏆 TinyMPC has been selected as finalists for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/).
+    🏆 TinyMPC has been selected as a finalist for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/)! Thank you to everyone who has used TinyMPC and provided feedback!
 
 
 TinyMPC is an open-source optimization solver tailored for convex model-predictive control, delivering high speed and low memory footprints. Implemented in pure C/C++ with minimal dependencies, this solver is particularly well-suited for embedded control and robotics applications on resource-constrained platforms. Additionally, we provide user-friendly interfaces for seamless integration with high-level languages such as Python, MATLAB, Julia.
@@ -57,6 +57,7 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
     <source src="media/fig82.mp4" type="video/mp4">
 </video>
 
+<<<<<<< HEAD
 ## Microcontroller Benchmarks
 
 TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks.
@@ -66,3 +67,6 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
 <img src="media/cdc_bench.png" width=100% />
 
 <img src="media/cdc_bench2.png" width=100% />
+=======
+
+>>>>>>> c2ca13e (Add cname to site)
