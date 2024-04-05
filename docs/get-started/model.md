@@ -5,7 +5,7 @@ description: How to obtain the model
 
 TinyMPC in its vanilla implementation can only handle linear dynamics, which means systems must be linearized about an equilibrium before being used by the solver. Extensions to TinyMPC allow the user to approximate a system's nonlinear dynamics by storing multiple linearizations, but we will start with only one.
 
-A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k$ and $u_k$ are the state and control at the current time step, $A$ is the state-transition matrix, $B$ is the control or input matrix, and $x_{k+1}$ is the state at the next time step. For each of the examples given in [the previous page](./examples.md), the state-transition matrix $A$ and input matrix $B$ were computed from the system's continuous, nonlinear dynamics. (1)
+A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k$ and $u_k$ are the state and control at the current time step, $A$ is the state-transition matrix, $B$ is the control or input matrix, and $x_{k+1}$ is the state at the next time step. For each of the examples given in [the previous page](../examples), the state-transition matrix $A$ and input matrix $B$ were computed from the system's continuous, nonlinear dynamics. (1)
 {.annotate}
 
 1. The system still needs to be discretized even if it is already linear. This can be done with the matrix exponential or by the same methods shown for the nonlinear system below.
@@ -22,6 +22,12 @@ Let's write those down in a dynamics function
 === "Python"
 
     ```py
+    mc = 0.2 # mass of the cart (kg)
+    mp = 0.1 # mass of the pole (kg)
+    ℓ = 0.5 # distance to the center of mass (meters)
+    g = 9.81
+    # (1)
+
     def cartpole_dynamics(x, u):
         r       = x[0] # cart position
         theta   = x[1] # pole angle
@@ -29,16 +35,24 @@ Let's write those down in a dynamics function
         theta_d = x[3] # change in pole angle
         F       = u[0] # force applied to cart
         
-        theta_dd = (g*np.sin(theta) + np.cos(theta) * ((-F - mp*ℓ*(theta_d**2) * \
-                        np.sin(theta))/(mc + mp))) / (ℓ*(4/3 - (mp*(np.cos(theta)**2))/(mc + mp)))
-        rdd = (F + mp*ℓ*((theta_d**2)*np.sin(theta) - theta_dd*np.cos(theta))) / (mc + mp)
+        theta_dd = (g*np.sin(theta) + np.cos(theta) * ((-F - mp*l*(theta_d**2) * \
+                        np.sin(theta))/(mc + mp))) / (l*(4/3 - (mp*(np.cos(theta)**2))/(mc + mp)))
+        rdd = (F + mp*l*((theta_d**2)*np.sin(theta) - theta_dd*np.cos(theta))) / (mc + mp)
 
         return np.array([rd, theta_d, rdd, theta_dd])
     ```
 
+    1. Good practice would be to add an argument to $\text{cartpole_dynamics}$ that stores each of these parameters.
+
 === "Julia"
 
     ```julia
+    mc = 0.2 # mass of the cart (kg)
+    mp = 0.1 # mass of the pole (kg)
+    ℓ = 0.5 # distance to the center of mass (meters)
+    g = 9.81
+    # (1)
+
     function cartpole_dynamics(x::Vector, u::Vector)
         r  = x[1] # cart position
         θ  = x[2] # pole angle
@@ -54,28 +68,63 @@ Let's write those down in a dynamics function
     end
     ```
 
+    1. Good practice would be to add an argument to $\text{cartpole_dynamics}$ that stores each of these parameters.
 
-This function describes the continuous dynamics of our system. Before linearizing, we first discretize with an integrator. RK4 (Runge-Kutta 4th order) is a common explicit integrator, but you can write down whatever you like.
+
+This function describes the continuous (nonlinear) dynamics of our system, i.e. $\dot{x} = \text{cartpole_dynamics}(x, u)$. Before linearizing, we first discretize our continuous dynamics with an integrator. RK4 (Runge-Kutta 4th order) is a common explicit integrator, but you can write down whatever you like.
 
 === "Python"
 
     ```py
-    def cartpole_rk4(x, u):
-        f1 = cartpole_dynamics(x, u)
-        f2 = cartpole_dynamics(x + 0.5*h*f1, u)
-        f3 = cartpole_dynamics(x + 0.5*h*f2, u)
-        f4 = cartpole_dynamics(x + h*f3, u)
-        return x + (h/6.0)*(f1 + 2*f2 + 2*f3 + f4)
+    def cartpole_rk4(x, u, dt):
+        f1 = dt*cartpole_dynamics(x, u)
+        f2 = dt*cartpole_dynamics(x + f1/2, u)
+        f3 = dt*cartpole_dynamics(x + f2/2, u)
+        f4 = dt*cartpole_dynamics(x + f3, u)
+        return x + (1/6)*(f1 + 2*f2 + 2*f3 + f4)
     ```
 
 === "Julia"
 
     ```julia
-    function rk4(params::NamedTuple, x::Vector, u::Vector, dt::Float64)
-        k1 = dt*dynamics(params, x, u)
-        k2 = dt*dynamics(params, x + k1/2, u)
-        k3 = dt*dynamics(params, x + k2/2, u)
-        k4 = dt*dynamics(params, x + k3, u)
-        return x + (1/6)*(k1 + 2*k2 + 2*k3 + k4)
+    function cartpole_rk4(x::Vector, u::Vector, dt::Float64)
+        f1 = dt*cartpole_dynamics(x, u)
+        f2 = dt*cartpole_dynamics(x + f1/2, u)
+        f3 = dt*cartpole_dynamics(x + f2/2, u)
+        f4 = dt*cartpole_dynamics(x + f3, u)
+        return x + (1/6)*(f1 + 2*f2 + 2*f3 + f4)
     end
     ```
+
+Our integrator takes in the state and control at the current time step and integrates the state forward by $\Delta t$ seconds (the dt parameter in the RK4 function). We now have the discrete (nonlinear) dynamics of our system, defined by $x_{k+1} = \text{cartpole_rk4}(x_k, u_k, dt)$. Now, we linearize about an equilibrium position to obtain state-transition and input matrices $A$ and $B$ we described earlier. Differentiating $\text{cartpole_rk4}$ by hand would be a pain, but luckily we have access to automatic differentiation tools to do this for us.
+
+=== "Python"
+
+    ```py
+    import autograd as AG
+
+    xgoal = np.array([0.0, np.pi, 0.0, 0.0])
+    ugoal = np.array([0.0])
+
+    dt = 0.01
+
+    A = AG.jacobian(lambda x_: cartpole_rk4(x_, ugoal))(xgoal)
+    B = AG.jacobian(lambda u_: cartpole_rk4(xgoal, u_))(ugoal)
+    ```
+
+=== "Julia"
+
+    ```julia
+    import ForwardDiff as FD
+
+    xgoal = [0; pi; 0; 0]
+    ugoal = [0]
+
+    dt = 0.01
+
+    A = FD.jacobian(dx -> cartpole_rk4(params, dx, ugoal, dt), xgoal)
+    B = FD.jacobian(du -> cartpole_rk4(params, xgoal, du, dt), ugoal)
+    ```
+
+
+Now all you have to do is save $A$ and $B$ and pass them to TinyMPC as shown in the problem setup section of [the examples page](../examples).
