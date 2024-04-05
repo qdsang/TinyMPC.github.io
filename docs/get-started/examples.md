@@ -5,7 +5,7 @@ description: TinyMPC examples
 
 # How to Use TinyMPC
 
-We offer user-friendly interfaces in high-level languages to enable low-level C++ code generation and verification, making them ready for deployment on embedded hardware. We also provide various robotic control examples, including the Crazyflie nano-quadrotor. 
+We provide various robotic control examples, including the Crazyflie nano-quadrotor, in high-level language interfaces. 
 
 Check out our GitHub repositories: [Python](https://github.com/TinyMPC/tinympc-python), [MATLAB](https://github.com/TinyMPC/tinympc-matlab), [Julia](https://github.com/TinyMPC/tinympc-julia)
 

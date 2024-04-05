@@ -6,6 +6,7 @@ repo_name: TinyMPC
 nav:
   - index.md
   - Get Started:
+    - Installation: get-started/installation.md
     - Examples: get-started/examples.md
     - Obtaining the Model: get-started/model.md
   - Algorithm: 
@@ -103,6 +104,9 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.arithmatex:
       generic: true
+  # Admonitions
+  - admonition
+  - pymdownx.details
 
 extra_javascript:
   - javascript/mathjax.js
