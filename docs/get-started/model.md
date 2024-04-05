@@ -7,7 +7,7 @@ description: How to linearize a system
 
 TinyMPC in its vanilla implementation can only handle linear dynamics, which means systems must be linearized about an equilibrium before being used by the solver. Extensions to TinyMPC allow the user to approximate a system's nonlinear dynamics by storing multiple linearizations, but we will start with only one.
 
-A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k$ and $u_k$ are the state and control at the current time step, $A$ is the state-transition matrix, $B$ is the control or input matrix, and $x_{k+1}$ is the state at the next time step. For each of the examples given in [the previous page](examples.md), the state-transition matrix $A$ and input matrix $B$ were computed from the system's continuous, nonlinear dynamics. (1)
+A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k$ and $u_k$ are the state and control at the current time step, $A$ is the state-transition matrix, $B$ is the control or input matrix, and $x_{k+1}$ is the state at the next time step. For each of the examples given in [the previous page](./examples.md), the state-transition matrix $A$ and input matrix $B$ were computed from the system's continuous, nonlinear dynamics. (1)
 {.annotate}
 
 1. The system still needs to be discretized even if it is already linear. This can be done with the matrix exponential or by the same methods shown for the nonlinear system below.
