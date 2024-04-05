@@ -8,6 +8,8 @@ description: TinyMPC description and overview
 <!-- <img src="media/banner.png" width=620 /> -->
 <!-- ![Alt Text](media/banner.png) -->
 
+🏆 TinyMPC has been selected as finalists for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/).
+
 TinyMPC is a model-predictive controller built for robots with small amounts of computational power. It's lean and fast, allowing it to run on cheap microcontrollers that have limited memory and speed.
 
 [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
