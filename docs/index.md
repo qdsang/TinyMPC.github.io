@@ -5,8 +5,17 @@ description: TinyMPC description and overview
 
 # Welcome to TinyMPC's documentation!
 
-<!-- <img src="media/banner.png" width=620 /> -->
-<!-- ![Alt Text](media/banner.png) -->
+<!-- <img src="media/darkmode-banner.png" width=620 />
+![Alt Text](media/darkmode-banner.png) -->
+![TinyMPC dark mode banner](media/lightmode-banner.png#only-light){ width=620 }
+![TinyMPC light mode banner](media/darkmode-banner.png#only-dark){ width=620 }
+
+<!-- <picture>
+  <!-- <source media="(prefers-color-scheme: light)" srcset="media/lightmode-banner.png">
+  <source media="(prefers-color-scheme: dark)" srcset="media/lightmode-banner.png"> --/>
+  <img media="(prefers-color-scheme: light)" src="media/lightmode-banner.png" width=620>
+  <img media="(prefers-color-scheme: dark)" src="media/darkmode-banner.png">
+</picture> -->
 
 !!! success "" 
 
