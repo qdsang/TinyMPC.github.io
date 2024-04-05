@@ -23,8 +23,8 @@ description: TinyMPC description and overview
 TinyMPC is an open-source optimization solver tailored for convex model-predictive control, delivering high speed and low memory footprints. Implemented in pure C/C++ with minimal dependencies, this solver is particularly well-suited for embedded control and robotics applications on resource-constrained platforms. Additionally, we provide user-friendly interfaces for seamless integration with high-level languages such as Python, MATLAB, Julia.
 
 [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
-[ICRA Paper :simple-arxiv:](https://arxiv.org/pdf/2310.16985.pdf){:target="_blank" .md-button}
-[CDC Paper :simple-arxiv:](https://arxiv.org/pdf/2403.18149.pdf){:target="_blank" .md-button}
+[ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
+[CDC Paper :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
 ## Robot Demonstrations
@@ -57,6 +57,7 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
 
 ## Microcontroller Benchmarks
 
+<<<<<<< HEAD
 TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks (smaller is better). 
 
 
@@ -84,3 +85,96 @@ TinyMPC, ECOS and SCS were benchmarked with SOCP-based rocket soft-landing MPC p
 <p align="center">
   <img width="50%" src="media/cdc_bench2.png" />
 </p>
+=======
+---
+
+<figure markdown="span">
+    ![ICRA24 MCU benchmarks](media/icra_bench.png){ width=60% align=right }
+    <div style="text-align: left;">
+        TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks. Here, we solve randomly generated QP MPC problems and compare iteration times and memory footprint against [OSQP](https://osqp.org/){:target="_blank"}. Because TinyMPC takes advantage of the specific structure of the MPC problem, the amount of data it stores scales linearly instead of quadratically with each dimension. This allows it to store much bigger problems (and solve them much faster) than generic QP solvers such as OSQP.
+    </div>
+</figure>
+
+---
+
+<figure markdown="span">
+    ![CDC24 MCU benchmarks](media/cdc_bench.png){ width=60% align=left}
+    <div style="text-align: left;">
+        TinyMPC is now also capable of handling conic constraints! In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. Again, because of its lack of generality, TinyMPC is orders of magnitudes faster than SCS and ECOS.
+    </div>
+</figure>
+
+---
+
+<figure markdown="span">
+    ![CDC24 constraint violation benchmarks](media/cdc_bench2.png){ width=40% align=right}
+    <div style="text-align: left;">
+        Since it's primary use is in real-time control, we also compared TinyMPC's trajectory tracking performance against SCS and ECOS on the rocket soft-landing problem. These tests assume the controller has $\text{Control Step}$ amount of time (in milliseconds) to solve the problem at every real time step (10 milliseconds). TinyMPC beats ECOS in this real-time task because of its ability to warm start each solve with the previous solution, and it performs more iterations per control step than SCS, allowing it to track the reference trajectory more reliably.
+    </div>
+</figure>
+
+---
+
+## Credits
+
+<div class="grid cards" markdown>
+
+-   
+
+    ![sam photo](media/contributors/sam.jpg)
+
+    Install [`mkdocs-material`](#) with [`pip`](#) and get up
+    and running in minutes
+
+    [:octicons-arrow-right-24: Getting started](#)
+
+-   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
+
+    ---
+
+    Focus on your content and generate a responsive and searchable static site
+
+    [:octicons-arrow-right-24: Reference](#)
+
+-   :material-format-font:{ .lg .middle } __Made to measure__
+
+    ---
+
+    Change the colors, fonts, language, icons, logo and more with a few lines
+
+    [:octicons-arrow-right-24: Customization](#)
+
+-   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+
+    ---
+
+    Material for MkDocs is licensed under MIT and available on [GitHub]
+
+    [:octicons-arrow-right-24: License](#)
+
+</div>
+
+## Citing
+
+```latex
+@misc{tinympc,
+      title={TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers}, 
+      author={Khai Nguyen and Sam Schoedel and Anoushka Alavilli and Brian Plancher and Zachary Manchester},
+      year={2023},
+      eprint={2310.16985},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
+
+```latex
+@misc{tinympc-conic-codegen,
+      title={Code Generation for Conic Model-Predictive Control on Microcontrollers with TinyMPC}, 
+      author={Sam Schoedel and Khai Nguyen and Elakhya Nedumaran and Brian Plancher and Zachary Manchester},
+      year={2024},
+      eprint={2403.18149},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
+}
+```
+>>>>>>> f1d8ade (Add benchmark and citing info to front page)

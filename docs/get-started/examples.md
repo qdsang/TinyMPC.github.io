@@ -22,7 +22,7 @@ Check out our GitHub repositories: [Python](https://github.com/TinyMPC/tinympc-p
 
     prob = tinympc.TinyMPC()
     prob.compile_lib(tinympc_dir)
-    
+
     os_ext = ".so" # (1)
     lib_dir = tinympc_dir + "/build/src/tinympc/libtinympcShared" + os_ext  # Path to the compiled library
     prob.load_lib(lib_dir)
@@ -191,7 +191,6 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         }
         ```
 
-
 ## Generate Solver Code
 
 We generated low-level C++ code ready for deployment on embedded hardware.
@@ -227,7 +226,6 @@ We generated low-level C++ code ready for deployment on embedded hardware.
     return 0;
     }
     ```
-
 
 ## Interact with Solver Code
 

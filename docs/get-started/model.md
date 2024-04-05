@@ -14,7 +14,7 @@ A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k
 
 ## Cart-pole example
 
-The continuous time dynamics for the cart-pole [have](https://courses.ece.ucsb.edu/ECE594/594D_W10Byl/hw/cartpole_eom.pdf) [been](https://www.matthewpeterkelly.com/tutorials/cartPole/index.html) [derived](https://underactuated.mit.edu/acrobot.html) [many](https://sharpneat.sourceforge.io/research/cart-pole/cart-pole-equations.html) [times](https://danielpiedrahita.wordpress.com/portfolio/cart-pole-control/). For this example we'll use the convention from [this derivation](https://coneural.org/florian/papers/05_cart_pole.pdf), where the pole is upright at $\theta=0$. If we ignore friction for this model, the only equations we care about in that derivation are (23) and (24). (1)
+The continuous time dynamics for the cart-pole [have](https://courses.ece.ucsb.edu/ECE594/594D_W10Byl/hw/cartpole_eom.pdf){:target="_blank"} [been](https://www.matthewpeterkelly.com/tutorials/cartPole/index.html){:target="_blank"} [derived](https://underactuated.mit.edu/acrobot.html){:target="_blank"} [many](https://sharpneat.sourceforge.io/research/cart-pole/cart-pole-equations.html){:target="_blank"} [times](https://danielpiedrahita.wordpress.com/portfolio/cart-pole-control/){:target="_blank"}. For this example we'll use the convention from [this derivation](https://coneural.org/florian/papers/05_cart_pole.pdf){:target="_blank"}, where the pole is upright at $\theta=0$. If we ignore friction for this model, the only equations we care about in that derivation are (23) and (24). (1)
 {.annotate}
 
 1. If you're following along and want to use a cart-pole model that has friction, use equations (21) and (22).
