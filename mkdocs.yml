@@ -5,9 +5,9 @@ repo_name: TinyMPC
 
 nav:
   - index.md
-  - Getting Started:
-    - Examples: getting-started/examples.md
-    - How to obtain the model?: getting-started/model.md
+  - Get Started:
+    - Examples: get-started/examples.md
+    - How to obtain the model?: get-started/model.md
   - Algorithm: 
     - algorithm.md
 
