@@ -81,44 +81,81 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
 
 ---
 
-## Credits
+## Made by
 
-<div class="grid cards" markdown>
-
--   
-
-    ![sam photo](media/contributors/sam.jpg)
-
-    Install [`mkdocs-material`](#) with [`pip`](#) and get up
-    and running in minutes
-
-    [:octicons-arrow-right-24: Getting started](#)
-
--   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
-
-    ---
-
-    Focus on your content and generate a responsive and searchable static site
-
-    [:octicons-arrow-right-24: Reference](#)
-
--   :material-format-font:{ .lg .middle } __Made to measure__
-
-    ---
-
-    Change the colors, fonts, language, icons, logo and more with a few lines
-
-    [:octicons-arrow-right-24: Customization](#)
-
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
-
-    ---
-
-    Material for MkDocs is licensed under MIT and available on [GitHub]
-
-    [:octicons-arrow-right-24: License](#)
-
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <p align="center">
+            <a href="https://www.linkedin.com/in/anoushka-alavilli-89586b178/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/anoushka_alavilli.jpg" /></a>
+        </p>
+        <h4 align="center">
+            Anoushka Alavilli
+        </h4>
+        <h6 align="center">
+            Main developer
+        </h6>
+    </div>
+    <div style="flex: 1;">
+        <p align="center">
+            <a href="https://xkhainguyen.github.io/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/khai_nguyen.jpg" /></a>
+        </p>
+        <h4 align="center">
+            Khai Nguyen
+        </h4>
+        <h6 align="center">
+            Main developer
+        </h6>
+    </div>
+    <div style="flex: 1;">
+        <p align="center">
+            <a href="https://samschoedel.com/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/sam_schoedel.jpg" /></a>
+        </p>
+        <h4 align="center">
+            Sam Schoedel
+        </h4>
+        <h6 align="center">
+            Main developer
+        </h6>
+    </div>
 </div>
+
+
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <p align="center">
+            <a href="https://www.linkedin.com/in/elakhya-nedumaran/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/elakhya_nedumaran.png" /></a>
+        </p>
+        <h4 align="center">
+            Elakhya Nedumaran
+        </h4>
+        <h6 align="center">
+            Code generation and interfaces
+        </h6>
+    </div>
+    <div style="flex: 1;">
+        <p align="center">
+            <a href="https://brianplancher.com/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/brian_plancher.jpg" /></a>
+        </p>
+        <h4 align="center">
+            Prof. Brian Plancher
+        </h4>
+        <h6 align="center">
+            Math and advice
+        </h6>
+    </div>
+    <div style="flex: 1;">
+        <p align="center">
+            <a href="https://www.linkedin.com/in/zacmanchester/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/zac_manchester.jpg" /></a>
+        </p>
+        <h4 align="center">
+            Prof. Zac Manchester
+        </h4>
+        <h6 align="center">
+            Math and advice
+        </h6>
+    </div>
+</div>
+
 
 ## Citing
 
