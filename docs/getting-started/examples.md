@@ -48,73 +48,141 @@ description: TinyMPC examples
 
 # Problem Setup
 
-### Cartpole
+=== "Cartpole"
 
-=== "Python"
+    For the cartpole, we use the linearized model of the discretized cartpole dynamics to stabilize about the upright position.
 
-    ``` py
-    n = 4  # states: x, xdot, theta, thetadot
-    m = 1  # controls: force on cart
-    N = 10  # horizon
+    === "Python"
 
-    A = [ # row-major order (1)
-        1, 0, 0, 0, 
-        0.01, 1, 0, 0, 
-        2.2330083403-5, 0.0044662105, 1.0002605176, 0.0521057900,
-        7.4430379746-8, 2.2330083403-5, 0.0100008683, 1.0002605176
-    ]
-    B = [ # row-major order
-        7.4683685627-5,
-        0.0149367653,
-        3.7976332318-5,
-        0.0075955962
-    ]
+        ``` py
+        n = 4  # states: x, xdot, theta, thetadot
+        m = 1  # controls: force on cart
+        N = 10  # horizon
 
-    Q = [10.0, 1, 10, 1]  # diagonal elements in row-major order
-    R = [1.0]  # diagonal elements in row-major order
-    rho = 0.1  # ADMM penalty parameter
+        A = [ # row-major order (1)
+            1, 0, 0, 0, 
+            0.01, 1, 0, 0, 
+            2.2330083403-5, 0.0044662105, 1.0002605176, 0.0521057900,
+            7.4430379746-8, 2.2330083403-5, 0.0100008683, 1.0002605176
+        ]
+        B = [ # row-major order
+            7.4683685627-5,
+            0.0149367653,
+            3.7976332318-5,
+            0.0075955962
+        ]
 
-    x_min = [-5.0] * n * N  # state constraints
-    x_max = [5.] * n * N  # state constraints
-    u_min = [-5.] * m * (N - 1)  # force constraints
-    u_max = [5.] * m * (N - 1)  # force constraints
+        Q = [10.0, 1, 10, 1]  # diagonal elements in row-major order
+        R = [1.0]  # diagonal elements in row-major order
+        rho = 0.1  # ADMM penalty parameter
 
-    abs_pri_tol = 1.0e-3  # absolute primal tolerance
-    abs_dual_tol = 1.0e-3  # absolute dual tolerance
-    max_iter = 100  # maximum number of iterations
-    check_termination = 1  # how often termination conditions are checked
+        x_min = [-5.0] * n * N  # state constraints
+        x_max = [5.] * n * N  # state constraints
+        u_min = [-5.] * m * (N - 1)  # force constraints
+        u_max = [5.] * m * (N - 1)  # force constraints
 
-    # Setup problem data
-    prob.setup(n, m, N, A, B, Q, R, x_min, x_max, u_min, u_max, rho,
-        abs_pri_tol, abs_dual_tol, max_iter, check_termination)
-    ```
+        abs_pri_tol = 1.0e-3  # absolute primal tolerance
+        abs_dual_tol = 1.0e-3  # absolute dual tolerance
+        max_iter = 100  # maximum number of iterations
+        check_termination = 1  # how often termination conditions are checked
 
-    1. In the future, A and B will be matrices and row/column-major ordering will be handled inside prob.setup
+        # Setup problem data
+        prob.setup(n, m, N, A, B, Q, R, x_min, x_max, u_min, u_max, rho,
+            abs_pri_tol, abs_dual_tol, max_iter, check_termination)
+        ```
 
-=== "Julia"
+        1. In the future, A and B will be matrices and row/column-major ordering will be handled inside prob.setup
 
-    ``` julia
-    #include <iostream>
+    === "Julia"
 
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
-    ```
+        ``` julia
+        #include <iostream>
 
-=== "MATLAB"
+        int main(void) {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+        }
+        ```
 
-    ``` matlab
-    #include <iostream>
+    === "MATLAB"
 
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
-    ```
+        ``` matlab
+        #include <iostream>
+
+        int main(void) {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+        }
+        ```
 
 
-### Quadrotor
+=== "Quadrotor"
+
+    For the quadrotor, we start with the full, continuous dynamics, then discretize and linearize about hover.
+
+    === "Python"
+
+        ``` py
+        n = 4  # states: x, xdot, theta, thetadot
+        m = 1  # controls: force on cart
+        N = 10  # horizon
+
+        A = [ # row-major order (1)
+            1, 0, 0, 0, 
+            0.01, 1, 0, 0, 
+            2.2330083403-5, 0.0044662105, 1.0002605176, 0.0521057900,
+            7.4430379746-8, 2.2330083403-5, 0.0100008683, 1.0002605176
+        ]
+        B = [ # row-major order
+            7.4683685627-5,
+            0.0149367653,
+            3.7976332318-5,
+            0.0075955962
+        ]
+
+        Q = [10.0, 1, 10, 1]  # diagonal elements in row-major order
+        R = [1.0]  # diagonal elements in row-major order
+        rho = 0.1  # ADMM penalty parameter
+
+        x_min = [-5.0] * n * N  # state constraints
+        x_max = [5.] * n * N  # state constraints
+        u_min = [-5.] * m * (N - 1)  # force constraints
+        u_max = [5.] * m * (N - 1)  # force constraints
+
+        abs_pri_tol = 1.0e-3  # absolute primal tolerance
+        abs_dual_tol = 1.0e-3  # absolute dual tolerance
+        max_iter = 100  # maximum number of iterations
+        check_termination = 1  # how often termination conditions are checked
+
+        # Setup problem data
+        prob.setup(n, m, N, A, B, Q, R, x_min, x_max, u_min, u_max, rho,
+            abs_pri_tol, abs_dual_tol, max_iter, check_termination)
+        ```
+
+        1. In the future, A and B will be matrices and row/column-major ordering will be handled inside prob.setup
+
+    === "Julia"
+
+        ``` julia
+        #include <iostream>
+
+        int main(void) {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+        }
+        ```
+
+    === "MATLAB"
+
+        ``` matlab
+        #include <iostream>
+
+        int main(void) {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+        }
+        ```
+
 
 # Generate
 
