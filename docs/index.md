@@ -5,13 +5,8 @@ description: TinyMPC description and overview
 
 # Welcome to TinyMPC's documentation!
 
-<!-- <img src="media/darkmode-banner.png" width=620 />
-![Alt Text](media/darkmode-banner.png) -->
 <p align="center">
   <img width="50%" src="media/lightmode-banner.png#only-light" />
-  
-</p>
-<p align="center">
   <img width="50%" src="media/darkmode-banner.png#only-dark" />
 </p>
 
@@ -57,35 +52,6 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
 
 ## Microcontroller Benchmarks
 
-<<<<<<< HEAD
-TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks (smaller is better). 
-
-
-### QP problems 
-
-TinyMPC and OSQP were benchmarked with random QP-based MPC problems of different sizes on a Teensy 4.1 board.
-
-<p align="center">
-  <img width="80%" src="media/icra_bench.png" />
-</p>
-
-### SOCP problems
-
-Left, TinyMPC and OSQP were benchmarked with QP-based predictive safety filtering problems of different sizes on a STM32F405 Feather board.
-Right, TinyMPC, ECOS and SCS were benchmarked with SOCP-based rocket soft-landing MPC problems of different sizes on a Teensy 4.1 board.
-
-<p align="center">
-  <img width="80%" src="media/cdc_bench.png" />
-</p>
-
-### Early termination 
-
-TinyMPC, ECOS and SCS were benchmarked with SOCP-based rocket soft-landing MPC problems with early termination on a Teensy 4.1 board.
-
-<p align="center">
-  <img width="50%" src="media/cdc_bench2.png" />
-</p>
-=======
 ---
 
 <figure markdown="span">
@@ -177,4 +143,3 @@ TinyMPC, ECOS and SCS were benchmarked with SOCP-based rocket soft-landing MPC p
       primaryClass={cs.RO}
 }
 ```
->>>>>>> f1d8ade (Add benchmark and citing info to front page)
