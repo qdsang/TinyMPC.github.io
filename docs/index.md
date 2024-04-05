@@ -5,7 +5,7 @@ description: TinyMPC description and overview
 
 # Welcome to TinyMPC's documentation!
 
-<!-- <img src="media/banner.png" width=620 /> -->
+
 <!-- ![Alt Text](media/banner.png) -->
 
 !!! success "" 
@@ -13,7 +13,7 @@ description: TinyMPC description and overview
     🏆 TinyMPC has been selected as finalists for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/).
 
 
-TinyMPC is an open-source optimization solver tailored for convex model-predictive control, delivering high speed and low memory footprints. Implemented in pure C/C++ with minimal dependencies, this solver is particularly well-suited for embedded control and robotics applications on resource-constrained platfornms. Additionally, we provide user-friendly interfaces for seamless integration with high-level languages such as Python, MATLAB, Julia.
+TinyMPC is an open-source optimization solver tailored for convex model-predictive control, delivering high speed and low memory footprints. Implemented in pure C/C++ with minimal dependencies, this solver is particularly well-suited for embedded control and robotics applications on resource-constrained platforms. Additionally, we provide user-friendly interfaces for seamless integration with high-level languages such as Python, MATLAB, Julia.
 
 [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
 [ICRA Paper :simple-arxiv:](https://arxiv.org/pdf/2310.16985.pdf){:target="_blank" .md-button}
@@ -21,6 +21,8 @@ TinyMPC is an open-source optimization solver tailored for convex model-predicti
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
 ## Robot Demonstrations
+
+Integrating TinyMPC into computationally underpowered robots enables them to execute agile maneuvers and exhibit safe behaviors.
 
 ### Dynamic obstacle avoidance
 
@@ -45,3 +47,13 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/fig82.mp4" type="video/mp4">
 </video>
+
+## Microcontroller Benchmarks
+
+TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks.
+
+<img src="media/icra_bench.png" width=100% />
+
+<img src="media/cdc_bench.png" width=100% />
+
+<img src="media/cdc_bench2.png" width=100% />

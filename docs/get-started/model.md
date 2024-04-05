@@ -129,4 +129,4 @@ Our integrator takes in the state and control at the current time step and integ
     ```
 
 
-Now all you have to do is save $A$ and $B$ and pass them to TinyMPC as shown in the problem setup section of [the examples page](../examples).
+Now all you have to do is save $A$ and $B$ and pass them to TinyMPC as shown in the problem setup section of [the examples page](examples.md).
