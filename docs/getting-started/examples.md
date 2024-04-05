@@ -3,7 +3,7 @@ title: Examples
 description: TinyMPC examples
 ---
 
-# Compilation
+## Compile
 
 === "Python"
 
@@ -46,11 +46,11 @@ description: TinyMPC examples
     }
     ```
 
-# Problem Setup
+## Setup Problem
 
-=== "Cartpole"
+=== "Cart-pole"
 
-    For the cartpole, we use the linearized model of the discretized cartpole dynamics to stabilize about the upright position.
+    For the cart-pole, we use the linearized model of the discretized cart-pole dynamics to stabilize about the upright position.
 
     === "Python"
 
@@ -184,7 +184,7 @@ description: TinyMPC examples
         ```
 
 
-# Generate
+## Generate
 
 === "Python"
 
@@ -219,7 +219,7 @@ description: TinyMPC examples
     ```
 
 
-# Solve
+## Solve
 
 === "Python"
 

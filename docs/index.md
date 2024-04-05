@@ -7,7 +7,7 @@ description: TinyMPC description and overview
 
 TinyMPC is a model-predictive controller built for robots with small amounts of computational power. It's lean and fast, allowing it to run on cheap microcontrollers that have limited memory and speed.
 
-[Get Started :material-arrow-right-box:](#){.md-button}
+[Get Started :material-arrow-right-box:](getting-started/examples){.md-button}
 [Original Paper :simple-arxiv:](https://arxiv.org/pdf/2310.16985.pdf){:target="_blank" .md-button}
 [Conic Code Gen Paper :simple-arxiv:](https://arxiv.org/pdf/2403.18149.pdf){:target="_blank" .md-button}
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
