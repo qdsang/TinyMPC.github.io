@@ -29,7 +29,7 @@ TinyMPC is an open-source optimization solver tailored for convex model-predicti
 
 ## Robot Demonstrations
 
-Integrating TinyMPC into computationally underpowered robots enables them to execute agile maneuvers and exhibit safe behaviors.
+TinyMPC contributes to bridging the gap between computationally intensive convex model-predictive control and resource-constraint processing platforms. Integrating TinyMPC into computationally underpowered robots enables them to execute agile maneuvers and exhibit safe behaviors.
 
 ### Dynamic obstacle avoidance
 
@@ -55,7 +55,6 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
     <source src="media/fig82.mp4" type="video/mp4">
 </video>
 
-<<<<<<< HEAD
 ## Microcontroller Benchmarks
 
 TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks (smaller is better). 

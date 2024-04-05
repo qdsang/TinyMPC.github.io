@@ -4,7 +4,11 @@ title: Algorithm
 
 # Inside TinyMPC
 
-TinyMPC's trick is to precompute expensive matrices offline so that only a small amount of computation is required during operation. Our 2024 ICRA submission video provides a concise overview of the method:
+!!! note ""
+
+    💡 At its core, our solver is designed to accelerate and compress the ADMM algorithm by exploiting the structure of the MPC problem.
+
+Our 2024 ICRA submission video provides a concise overview of the method:
 
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button }
 

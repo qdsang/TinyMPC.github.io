@@ -9,8 +9,9 @@ nav:
     - Installation: get-started/installation.md
     - Examples: get-started/examples.md
     - Obtaining the Model: get-started/model.md
-  - Algorithm: 
-    - algorithm.md
+  - The Solver: 
+    - Inside TinyMPC: solver/solver.md
+    # - Insights: solver/algorithm.md
 
 theme:
   name: material
