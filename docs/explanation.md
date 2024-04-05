@@ -73,16 +73,19 @@ Now all we have to do is solve a few unconstrained optimization problems!
 
 ## TODO: primal and slack update and discrete algebraic riccati equation
 
-
-<!-- 
+<!--
 this is an example of `code` in markdown
 <!-- ``` py (or c or cpp) title="<custom title>" { .yaml .no-copy } --/>
 ``` julia
 # This is a function
 function function(x):
-    return x**2 # (1)!
+    return x**2 # (1)
 ```
 
+1.  :man_raising_hand: I'm a code annotation! I can contain `code`, __formatted
+    text__, images, ... basically anything that can be written in Markdown.
+
+<!-- 
 1.  :man_raising_hand: I'm $\beta$ $\int_5^{3x^2}$ a code annotation! I can contain `code`, __formatted
     text__, images, ... basically anything that can be written in Markdown.
 -->

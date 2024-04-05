@@ -7,12 +7,8 @@ nav:
   - index.md
   - Explanation: 
     - explanation.md
-  - getting-started.md
-  - Examples: 
-    - C++: examples/cpp.md
-    - Python: examples/python.md
-    - Julia: examples/julia.md
-    - MATLAB: examples/matlab.md
+  - Getting Started:
+    - Examples: getting-started/examples.md
 
 theme:
   name: material
@@ -20,6 +16,7 @@ theme:
   icon:
     logo: material/graph-outline
     repo: fontawesome/brands/github
+    annotation: material/arrow-right-circle
 
   favicon: media/favicon.ico
 
@@ -68,6 +65,7 @@ theme:
     - content.code.copy
     # - content.code.select # Insiders feature
     - content.code.annotate
+    - content.tabs.link
 
 plugins:
   - search
@@ -92,7 +90,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
   # Code blocks
   - pymdownx.highlight:
       anchor_linenums: true
@@ -101,7 +98,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.arithmatex:
       generic: true
 
