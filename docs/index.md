@@ -10,12 +10,11 @@ description: TinyMPC description and overview
   <img width="50%" src="media/darkmode-banner.png#only-dark" />
 </p>
 
+TinyMPC is an open-source solver tailored for convex model-predictive control that delivers high speed computation with a small memory footprint. Implemented in C++ with minimal dependencies, TinyMPC is particularly suited for embedded control and robotics applications on resource-constrained platforms. TinyMPC can handle state and input bounds and second-order cone constraints. Python, Julia, and MATLAB interfaces are available to aid in generating code for embedded systems.
+
 !!! success "" 
 
     🏆 TinyMPC has been selected as a finalist for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/)! Thank you to everyone who has used TinyMPC and provided feedback!
-
-
-TinyMPC is an open-source optimization solver tailored for convex model-predictive control, delivering high speed and low memory footprints. Implemented in pure C/C++ with minimal dependencies, this solver is particularly well-suited for embedded control and robotics applications on resource-constrained platforms. Additionally, we provide user-friendly interfaces for seamless integration with high-level languages such as Python, MATLAB, Julia.
 
 [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
 [ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
@@ -26,11 +25,11 @@ TinyMPC is an open-source optimization solver tailored for convex model-predicti
 
 ## Robot demonstrations
 
-TinyMPC contributes to bridging the gap between computationally intensive convex model-predictive control and resource-constraint processing platforms. Integrating TinyMPC into computationally underpowered robots enables them to execute agile maneuvers and exhibit safe behaviors.
+TinyMPC contributes to bridging the gap between computationally intensive convex model-predictive control and resource-constrained processing platforms. Integrating TinyMPC into computationally underpowered robots enables them to execute agile maneuvers and exhibit safe behavior.
 
 ### Dynamic obstacle avoidance
 
-TinyMPC runs fast enough to enable re-linearizing constraints at each time step, allowing it to reason about moving obstacles, as it is doing in both videos. The algorithm can additionally handle any number of arbitrary linear constraints. On the right, for example, it is avoiding the end of the stick while staying in the vertical yz plane.
+TinyMPC runs fast enough to enable re-linearizing constraints at each time step, allowing it to reason about moving obstacles. On the left, a virtual sphere centered at the end of the stick is linearized into a new set of hyperplane constraints at each time step. The algorithm can additionally handle any number of arbitrary linear constraints. On the right, for example, it is avoiding the end of the stick while staying in the yz plane.
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/favoid.mp4" type="video/mp4">
