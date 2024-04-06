@@ -12,6 +12,8 @@ Our 2024 ICRA submission video provides a concise overview of the solver:
 
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
+Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
+
 ## Problem formulation
 
 TinyMPC solves convex quadratic model-predictive control programs of the form
@@ -22,20 +24,28 @@ $$
   \mbox{subject to} & x_{0} = x_{\text{init}},  \\
                     & x_{k+1} = A x_k + B u_k, \\
                     & u_k^l \le u_k \le u_k^u, \\
-                    & x_k^l \le x_k \le x_k^u,
+                    & x_k^l \le x_k \le x_k^u, \\
+                    & u_k \in \mathcal{K}_u, \\
+                    & x_k \in \mathcal{K}_x
 \end{array}
 $$
 
-where $x_k \in \mathbb{R}^n$, $u_k \in \mathbb{R}^m$ are the state and control input at time step $k$, $N$ is the number of time steps (also referred to as the horizon), $A \in \mathbb{R}^{n \times n}$ and $B \in \mathbb{R}^{n \times m}$ define the system dynamics, $Q \succeq 0$, $R \succ 0$, and $Q_f \succeq 0$ are symmetric cost weight matrices and $\bar{x}_k$ and $\bar{u}_k$ are state and input reference trajectories.
+where $x_k \in \mathbb{R}^n$, $u_k \in \mathbb{R}^m$ are the state and control input at time step $k$, $N$ is the number of time steps (also referred to as the horizon), $A \in \mathbb{R}^{n \times n}$ and $B \in \mathbb{R}^{n \times m}$ define the system dynamics, $Q \succeq 0$, $R \succ 0$, and $Q_f \succeq 0$ are symmetric cost weight matrices and $\bar{x}_k$ and $\bar{u}_k$ are state and input reference trajectories. Constrains include state and input lower and upper bounds and second-order cones $\mathcal{K}$.
+
+---
 
 ## Algorithm
 
-TODO
+Will be provided soon! Meanwhile, check out [our papers](../index.md) or [background](background.md) for more details.
+
+---
 
 ## Implementations
 
-The TinyMPC library offers a C++ implementation of the algorithm mentioned above, along with [interfaces to several high-level languages](../get-started/examples.md). This integration allows these languages to effectively solve optimal control problems using TinyMPC. 
+The TinyMPC library offers a C++ implementation of the algorithm mentioned above, along with [interfaces to several high-level languages](../get-started/examples.md). This integration allows these languages to seamlessly solve optimal control problems using TinyMPC.
 
 There are also several community-developed implementations of this algorithm: [Rust](https://github.com/peterkrull/tinympc-rs)
 
 Numerical benchmarks against other solvers on microcontrollers are available at [this repository](https://github.com/RoboticExplorationLab/mcu-solver-benchmarks).
+
+Crazyflie firmware with TinyMPC is available at [this repository](https://github.com/RoboticExplorationLab/tinympc-crazyflie-firmware).

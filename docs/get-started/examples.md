@@ -5,12 +5,13 @@ description: TinyMPC examples
 
 # How to use TinyMPC
 
-We provide various robotic control examples, including the Crazyflie nano-quadrotor, in high-level language interfaces. 
+We provide various robotic control examples, including the Crazyflie nano-quadrotor, in high-level language interfaces. Make sure you are able to [install the package](installation.md).
 
-Check out our GitHub repositories: [C++](https://github.com/TinyMPC/TinyMPC), [Python](https://github.com/TinyMPC/tinympc-python), [MATLAB](https://github.com/TinyMPC/tinympc-matlab), [Julia](https://github.com/TinyMPC/tinympc-julia)
-
+Check out our GitHub repositories for implementation details: [C++](https://github.com/TinyMPC/TinyMPC), [Python](https://github.com/TinyMPC/tinympc-python), [MATLAB](https://github.com/TinyMPC/tinympc-matlab), [Julia](https://github.com/TinyMPC/tinympc-julia)
 
 Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
+
+To get started simply choose your language interface and follow the instructions below (tested on Ubuntu):
 
 ## Load the library
 
@@ -47,6 +48,17 @@ Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for 
 === "MATLAB"
 
     ``` matlab
+    #include <iostream>
+
+    int main(void) {
+    std::cout << "Hello world!" << std::endl;
+    return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` cpp
     #include <iostream>
 
     int main(void) {
@@ -125,7 +137,16 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         return 0;
         }
         ```
+    === "C++"
 
+        ``` cpp
+        #include <iostream>
+
+        int main(void) {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+        }
+    ```
 
 === "Quadrotor"
 
@@ -194,6 +215,17 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         }
         ```
 
+    === "C++"
+
+        ``` cpp
+        #include <iostream>
+
+        int main(void) {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+        }
+        ```
+
 ## Generate solver code
 
 We generated low-level C++ code ready for deployment on embedded hardware.
@@ -222,6 +254,17 @@ We generated low-level C++ code ready for deployment on embedded hardware.
 === "MATLAB"
 
     ``` matlab
+    #include <iostream>
+
+    int main(void) {
+    std::cout << "Hello world!" << std::endl;
+    return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` cpp
     #include <iostream>
 
     int main(void) {
@@ -288,6 +331,17 @@ We can also verify our program by interacting in high-level languages before dep
 === "MATLAB"
 
     ``` matlab
+    #include <iostream>
+
+    int main(void) {
+    std::cout << "Hello world!" << std::endl;
+    return 0;
+    }
+    ```
+
+=== "C++"
+
+    ``` cpp
     #include <iostream>
 
     int main(void) {
