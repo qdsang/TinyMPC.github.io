@@ -22,13 +22,15 @@ TinyMPC is an open-source optimization solver tailored for convex model-predicti
 [CDC Paper :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
-## Robot Demonstrations
+---
+
+## Robot demonstrations
 
 TinyMPC contributes to bridging the gap between computationally intensive convex model-predictive control and resource-constraint processing platforms. Integrating TinyMPC into computationally underpowered robots enables them to execute agile maneuvers and exhibit safe behaviors.
 
 ### Dynamic obstacle avoidance
 
-TinyMPC runs fast enough to enable re-linearizing constraints at each time step, allowing it to reason about moving obstacles, as it is doing in both videos. The algorithm can additionally handle any number of arbitrary linear constraints. On the right, for example, it is avoiding the end of the stick while staying in the yz plane.
+TinyMPC runs fast enough to enable re-linearizing constraints at each time step, allowing it to reason about moving obstacles, as it is doing in both videos. The algorithm can additionally handle any number of arbitrary linear constraints. On the right, for example, it is avoiding the end of the stick while staying in the vertical yz plane.
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/favoid.mp4" type="video/mp4">
@@ -36,7 +38,7 @@ TinyMPC runs fast enough to enable re-linearizing constraints at each time step,
 
 ### Extreme pose recovery
 
-TinyMPC can enable recovering from extreme initial conditions. In this example, it is compared against three of the [Crazyflie 2.1](https://www.bitcraze.io/products/crazyflie-2-1/){:target="_blank"}'s stock controllers. Only TinyMPC was able to keep the control inputs under the drone's limits, and the recovery looks pretty good!
+TinyMPC can enable recovering from extreme initial conditions. In this example, it is compared against three of the [Crazyflie 2.1](https://www.bitcraze.io/products/crazyflie-2-1/){:target="_blank"}'s stock controllers. Only TinyMPC was able to reason about the control limits, thereby exibiting a clean-cut recovering maneuver.
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/fextreme.mp4" type="video/mp4">
@@ -44,44 +46,54 @@ TinyMPC can enable recovering from extreme initial conditions. In this example, 
 
 ### Figure-8 tracking
 
-We compared against the same stock controllers for an infeasible figure-8 tracking task (the time given to complete a single figure-8 could only be met if the drone was much more powerful). TinyMPC and PID were able to stay upright, but TinyMPC's trajectory more closely resembled a figure-8.
+We compared against the same stock controllers for an infeasible fast figure-8 tracking task (the time given to complete a single figure-8 could only be met if the drone was much more powerful). TinyMPC and PID were able to stay upright, but TinyMPC's trajectory more closely resembled a figure-8.
 
 <video width="100%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 100%;">
     <source src="media/fig82.mp4" type="video/mp4">
 </video>
 
-## Microcontroller Benchmarks
-
 ---
+
+## Microcontroller benchmarks
+
+TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks. 
 
 <figure markdown="span">
     ![ICRA24 MCU benchmarks](media/icra_bench.png){ width=60% align=right }
     <div style="text-align: left;">
-        TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footprint on microcontroller benchmarks. Here, we solve randomly generated QP MPC problems and compare iteration times and memory footprint against [OSQP](https://osqp.org/){:target="_blank"}. Because TinyMPC takes advantage of the specific structure of the MPC problem, the amount of data it stores scales linearly instead of quadratically with each dimension. This allows it to store much bigger problems (and solve them much faster) than generic QP solvers such as OSQP.
+        <br>
+        <br>
+        <br>
+        Here, we solve randomly generated QP-based MPC problems and compare iteration times and memory footprint against [OSQP](https://osqp.org/){:target="_blank"}. {==TinyMPC exibits a maximum speed-up of 8x over OSQP while scaling marginally in terms of RAM usage.==}
+        <!-- Because TinyMPC takes advantage of the specific structure of the MPC problem, the amount of data it stores scales linearly instead of quadratically with each dimension. This allows it to store much bigger problems (and solve them much faster) than generic QP solvers such as OSQP. -->
     </div>
 </figure>
-
----
 
 <figure markdown="span">
     ![CDC24 MCU benchmarks](media/cdc_bench.png){ width=60% align=left}
     <div style="text-align: left;">
-        TinyMPC is now also capable of handling conic constraints! In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. Again, because of its lack of generality, TinyMPC is orders of magnitudes faster than SCS and ECOS.
+        <br>
+        <br>
+        TinyMPC is now also capable of handling conic constraints! In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. {==TinyMPC achieves an average speed-up of 13x over SCS and 137x over ECOS while performing no dynamic allocation and scaling to much larger problems.==}
+        <!-- #gain, because of its lack of generality, TinyMPC is orders of magnitudes faster than SCS and ECOS. -->
     </div>
 </figure>
-
----
 
 <figure markdown="span">
     ![CDC24 constraint violation benchmarks](media/cdc_bench2.png){ width=40% align=right}
     <div style="text-align: left;">
-        Since it's primary use is in real-time control, we also compared TinyMPC's trajectory tracking performance against SCS and ECOS on the rocket soft-landing problem. These tests assume the controller has $\text{Control Step}$ amount of time (in milliseconds) to solve the problem at every real time step (10 milliseconds). TinyMPC beats ECOS in this real-time task because of its ability to warm start each solve with the previous solution, and it performs more iterations per control step than SCS, allowing it to track the reference trajectory more reliably.
+        <br>
+        <br>
+        High-rate real-time control requires a solver to return a solution within a strict time window. {==In terms of constraint violation and landing error, TinyMPC consistently exhibits superior performance over ECOS and SCS for all control step durations==} and, critically, only appreciably violates constraints at the shortest duration of 2ms.
+        <!-- Since it's primary use is in real-time control, we also compared TinyMPC's trajectory tracking performance against SCS and ECOS on the rocket soft-landing problem. These tests assume the controller has $\text{Control Step}$ amount of time (in milliseconds) to solve the problem at every real time step (10 milliseconds). TinyMPC beats ECOS in this real-time task because of its ability to warm start each solve with the previous solution, and it performs more iterations per control step than SCS, allowing it to track the reference trajectory more reliably. -->
     </div>
 </figure>
 
 ---
 
 ## Made by
+
+\*Main developers
 
 <div style="display: flex;">
     <div style="flex: 1;">
@@ -91,31 +103,31 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
         <h4 align="center">
             Anoushka Alavilli
         </h4>
-        <h6 align="center">
+        <!-- <h6 align="center">
             Main developer
-        </h6>
+        </h6> -->
     </div>
     <div style="flex: 1;">
         <p align="center">
             <a href="https://xkhainguyen.github.io/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/khai_nguyen.jpg" /></a>
         </p>
         <h4 align="center">
-            Khai Nguyen
+            Khai Nguyen*
         </h4>
-        <h6 align="center">
+        <!-- <h6 align="center">
             Main developer
-        </h6>
+        </h6> -->
     </div>
     <div style="flex: 1;">
         <p align="center">
             <a href="https://samschoedel.com/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/sam_schoedel.jpg" /></a>
         </p>
         <h4 align="center">
-            Sam Schoedel
+            Sam Schoedel*
         </h4>
-        <h6 align="center">
+        <!-- <h6 align="center">
             Main developer
-        </h6>
+        </h6> -->
     </div>
 </div>
 
@@ -128,9 +140,9 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
         <h4 align="center">
             Elakhya Nedumaran
         </h4>
-        <h6 align="center">
+        <!-- <h6 align="center">
             Code generation and interfaces
-        </h6>
+        </h6> -->
     </div>
     <div style="flex: 1;">
         <p align="center">
@@ -139,9 +151,9 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
         <h4 align="center">
             Prof. Brian Plancher
         </h4>
-        <h6 align="center">
+        <!-- <h6 align="center">
             Math and advice
-        </h6>
+        </h6> -->
     </div>
     <div style="flex: 1;">
         <p align="center">
@@ -150,23 +162,21 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
         <h4 align="center">
             Prof. Zac Manchester
         </h4>
-        <h6 align="center">
+        <!-- <h6 align="center">
             Math and advice
-        </h6>
+        </h6> -->
     </div>
 </div>
 
 
-## Citing
+## Cite the papers
 
 ```latex
-@misc{tinympc,
+@inproceedings{tinympc,
       title={TinyMPC: Model-Predictive Control on Resource-Constrained Microcontrollers}, 
       author={Khai Nguyen and Sam Schoedel and Anoushka Alavilli and Brian Plancher and Zachary Manchester},
-      year={2023},
-      eprint={2310.16985},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO}
+      year={2024},
+      booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
 }
 ```
 
@@ -177,6 +187,5 @@ We compared against the same stock controllers for an infeasible figure-8 tracki
       year={2024},
       eprint={2403.18149},
       archivePrefix={arXiv},
-      primaryClass={cs.RO}
 }
 ```

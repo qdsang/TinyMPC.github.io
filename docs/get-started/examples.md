@@ -3,13 +3,16 @@ title: Examples
 description: TinyMPC examples
 ---
 
-# How to Use TinyMPC
+# How to use TinyMPC
 
 We provide various robotic control examples, including the Crazyflie nano-quadrotor, in high-level language interfaces. 
 
-Check out our GitHub repositories: [Python](https://github.com/TinyMPC/tinympc-python), [MATLAB](https://github.com/TinyMPC/tinympc-matlab), [Julia](https://github.com/TinyMPC/tinympc-julia)
+Check out our GitHub repositories: [C++](https://github.com/TinyMPC/TinyMPC), [Python](https://github.com/TinyMPC/tinympc-python), [MATLAB](https://github.com/TinyMPC/tinympc-matlab), [Julia](https://github.com/TinyMPC/tinympc-julia)
 
-## Install the Library
+
+Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
+
+## Load the library
 
 === "Python"
 
@@ -52,7 +55,7 @@ Check out our GitHub repositories: [Python](https://github.com/TinyMPC/tinympc-p
     }
     ```
 
-## Set up the Problem
+## Set up the problem
 
 Check out [model](./model.md) to learn how to obtain A and B matrices.
 
@@ -191,7 +194,7 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         }
         ```
 
-## Generate Solver Code
+## Generate solver code
 
 We generated low-level C++ code ready for deployment on embedded hardware.
 
@@ -227,7 +230,7 @@ We generated low-level C++ code ready for deployment on embedded hardware.
     }
     ```
 
-## Interact with Solver Code
+## Interact with solver code
 
 We can also verify our program by interacting in high-level languages before deployment. This naturally provides a convenient software-in-the-loop (SIL) testing pipeline. Below is an example of running MPC in simulation, you can use any simulators.
 

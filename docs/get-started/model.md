@@ -1,6 +1,6 @@
 ---
 title: Model
-description: How to linearize a system
+description: Obtain the model
 ---
 
 ## Linearization

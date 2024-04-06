@@ -8,7 +8,7 @@ nav:
   - Get Started:
     - Installation: get-started/installation.md
     - Examples: get-started/examples.md
-    - Obtaining the Model: get-started/model.md
+    - Obtaining the model: get-started/model.md
   - The Solver: 
     - Inside TinyMPC: solver/solver.md
     # - Insights: solver/algorithm.md
@@ -110,6 +110,12 @@ markdown_extensions:
       generic: true
   # Admonitions
   - admonition
+  # Formatting
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
 
 extra_javascript:
   - javascript/mathjax.js

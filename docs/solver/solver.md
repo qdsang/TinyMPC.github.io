@@ -12,7 +12,7 @@ Our 2024 ICRA submission video provides a concise overview of the solver:
 
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button }
 
-## Problem Statement
+## Problem statement
 
 The TinyMPC solver is a numerical optimization package for solving convex quadratic model-predictive control programs in the default form
 
