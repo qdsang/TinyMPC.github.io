@@ -139,7 +139,7 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         return 0;
         }
         ```
-        
+
     === "C++"
 
         ``` cpp
@@ -149,7 +149,7 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         std::cout << "Hello world!" << std::endl;
         return 0;
         }
-    ```
+        ```
 
 === "Quadrotor"
 
