@@ -8,7 +8,7 @@ nav:
   - Get Started:
     - Installation: get-started/installation.md
     - Examples: get-started/examples.md
-    - Obtaining the model: get-started/model.md
+    - Obtain the model: get-started/model.md
   - The Solver: 
     - Inside TinyMPC: solver/solver.md
     # - Insights: solver/algorithm.md

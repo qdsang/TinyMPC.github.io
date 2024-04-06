@@ -54,5 +54,3 @@ To get started simply choose your language interface and follow the easy install
     `git clone --recurse-submodules https://github.com/TinyMPC/tinympc-matlab.git`
 
     Run the `interactive_cartpole.mlx` example
-
-Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
