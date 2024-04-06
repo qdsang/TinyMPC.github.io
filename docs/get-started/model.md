@@ -12,6 +12,8 @@ A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k
 
 1. The system still needs to be discretized even if it is already linear. This can be done with the matrix exponential or by the same methods shown for the nonlinear system below.
 
+---
+
 ## Cart-pole example
 
 The continuous time dynamics for the cart-pole [have](https://courses.ece.ucsb.edu/ECE594/594D_W10Byl/hw/cartpole_eom.pdf){:target="_blank"} [been](https://www.matthewpeterkelly.com/tutorials/cartPole/index.html){:target="_blank"} [derived](https://underactuated.mit.edu/acrobot.html){:target="_blank"} [many](https://sharpneat.sourceforge.io/research/cart-pole/cart-pole-equations.html){:target="_blank"} [times](https://danielpiedrahita.wordpress.com/portfolio/cart-pole-control/){:target="_blank"}. For this example we'll use the convention from [this derivation](https://coneural.org/florian/papers/05_cart_pole.pdf){:target="_blank"}, where the pole is upright at $\theta=0$. If we ignore friction for this model, the only equations we care about in that derivation are (23) and (24). (1)

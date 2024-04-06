@@ -6,6 +6,8 @@ title: Background
 
 The underlying algorithm is the [alternating direction method of multipliers](https://stanford.edu/~boyd/admm.html){:target="_blank"}. TinyMPC reformulates the primal update step - the part that usually takes the longest - as an [LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator){:target="_blank"}. These have been studied for decades, and we know how to write LQR problems in a closed form: specifically, using [Riccati recursion](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation){:target="_blank"}. We reorganize some of this recursive function to extract big matrices that only need to be computed once. In the vanilla implementation, this restricts TinyMPC to solving only a *linear* trajectory tracking problem (with any kinds of constraints, as long as they can be quickly re-linearized online). However, as seen in our demo videos, a single linearization can go a long way.
 
+---
+
 ## Alternating direction method of multipliers (ADMM)
 
 The alternating direction method of multipliers algorithm was developed in the 1970s and [used in 2011 by researchers at Stanford](https://stanford.edu/~boyd/papers/pdf/admm_distr_stats.pdf){:target="_blank"} to better solve the problem of distributed convex optimization. Some of these researchers later helped in developing [OSQP, the Operator Splitting Quadratic Program solver](https://osqp.org/){:target="_blank"}. TinyMPC takes much of its inspiration from these two sources.

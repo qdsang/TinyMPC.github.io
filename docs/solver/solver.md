@@ -14,6 +14,8 @@ Our 2024 ICRA submission video provides a concise overview of the solver:
 
 Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
 
+---
+
 ## Problem formulation
 
 TinyMPC solves convex quadratic model-predictive control programs of the form

@@ -11,6 +11,8 @@ Check out our GitHub repositories for implementation details: [C++](https://gith
 
 Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
 
+---
+
 To get started simply choose your language interface and follow the instructions below (tested on Ubuntu):
 
 ## Load the library
@@ -137,6 +139,7 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
         return 0;
         }
         ```
+        
     === "C++"
 
         ``` cpp

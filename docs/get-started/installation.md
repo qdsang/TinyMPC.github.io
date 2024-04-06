@@ -11,6 +11,8 @@ Check out our GitHub repositories for implementation details: [C++](https://gith
 
 Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
 
+---
+
 To get started simply choose your language interface and follow the easy installation instructions below (tested on Ubuntu):
 
 === "C++"
