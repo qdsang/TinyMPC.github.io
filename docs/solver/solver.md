@@ -6,15 +6,15 @@ title: Inside TinyMPC
 
 !!! note ""
 
-    💡 At its core, our solver is designed to *accelerate and compress* the ADMM algorithm by *exploiting the structure* of the MPC problem.
+    :fontawesome-solid-microchip: At its core, TinyMPC accelerates and compresses the ADMM algorithm by exploiting the structure of the MPC problem.
 
-Our 2024 ICRA submission video provides a concise overview of the solver: 
+Our 2024 ICRA submission video provides a concise overview of the solver:
 
-[Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button }
+[Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
-## Problem statement
+## Problem formulation
 
-The TinyMPC solver is a numerical optimization package for solving convex quadratic model-predictive control programs in the default form
+TinyMPC solves convex quadratic model-predictive control programs of the form
 
 $$
 \begin{array}{ll}
@@ -22,7 +22,7 @@ $$
   \mbox{subject to} & x_{0} = x_{\text{init}},  \\
                     & x_{k+1} = A x_k + B u_k, \\
                     & u_k^l \le u_k \le u_k^u, \\
-                    & x_k^l \le x_k \le x_k^u. 
+                    & x_k^l \le x_k \le x_k^u,
 \end{array}
 $$
 

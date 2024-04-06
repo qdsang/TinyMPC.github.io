@@ -1,22 +1,8 @@
 ---
-title: Algorithm
+title: Background
 ---
 
-# Inside TinyMPC
-
-!!! note ""
-
-    💡 At its core, our solver is designed to accelerate and compress the ADMM algorithm by exploiting the structure of the MPC problem.
-
-Our 2024 ICRA submission video provides a concise overview of the method:
-
-[Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button }
-
-<!-- <video width="80%" preload="auto" muted autoplay controls loop style="border: 0px solid #bbb; border-radius: 10px; width: 80%;">
-    <source src="https://www.youtube.com/watch?v=NKOrRyhcr6w" type="video/mp4">
-</video> -->
-
-## The Algorithm
+## Overview
 
 The underlying algorithm is the [alternating direction method of multipliers](https://stanford.edu/~boyd/admm.html){:target="_blank"}. TinyMPC reformulates the primal update step - the part that usually takes the longest - as an [LQR problem](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator){:target="_blank"}. These have been studied for decades, and we know how to write LQR problems in a closed form: specifically, using [Riccati recursion](https://en.wikipedia.org/wiki/Algebraic_Riccati_equation){:target="_blank"}. We reorganize some of this recursive function to extract big matrices that only need to be computed once. In the vanilla implementation, this restricts TinyMPC to solving only a *linear* trajectory tracking problem (with any kinds of constraints, as long as they can be quickly re-linearized online). However, as seen in our demo videos, a single linearization can go a long way.
 

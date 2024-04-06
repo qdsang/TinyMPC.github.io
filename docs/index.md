@@ -63,7 +63,7 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
         <br>
         <br>
         <br>
-        Here, we solve randomly generated QP-based MPC problems and compare iteration times and memory footprint against [OSQP](https://osqp.org/){:target="_blank"}. {==TinyMPC exibits a maximum speed-up of 8x over OSQP while scaling marginally in terms of RAM usage.==}
+        Here, we solve randomly generated QP-based MPC problems and compare iteration times and memory footprint against [OSQP](https://osqp.org/){:target="_blank"}. TinyMPC exibits a maximum speed-up of 8x over OSQP with much less memory.
         <!-- Because TinyMPC takes advantage of the specific structure of the MPC problem, the amount of data it stores scales linearly instead of quadratically with each dimension. This allows it to store much bigger problems (and solve them much faster) than generic QP solvers such as OSQP. -->
     </div>
 </figure>
@@ -73,7 +73,7 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
     <div style="text-align: left;">
         <br>
         <br>
-        TinyMPC is now also capable of handling conic constraints! In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. {==TinyMPC achieves an average speed-up of 13x over SCS and 137x over ECOS while performing no dynamic allocation and scaling to much larger problems.==}
+        TinyMPC is now also capable of handling conic constraints! In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. TinyMPC achieves an average speed-up of 13x over SCS and 137x over ECOS.
         <!-- #gain, because of its lack of generality, TinyMPC is orders of magnitudes faster than SCS and ECOS. -->
     </div>
 </figure>
@@ -83,7 +83,7 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
     <div style="text-align: left;">
         <br>
         <br>
-        High-rate real-time control requires a solver to return a solution within a strict time window. {==In terms of constraint violation and landing error, TinyMPC consistently exhibits superior performance over ECOS and SCS for all control step durations==} and, critically, only appreciably violates constraints at the shortest duration of 2ms.
+        Real-time control requires a solver to return a solution within a strict time window. We compared TinyMPC's trajectory tracking performance against SCS and ECOS on the rocket soft-landing problem while artificially changing the amount of time available for each solve. TinyMPC violates constraints less and has lower tracking error than SCS and ECOS at all control durations.
         <!-- Since it's primary use is in real-time control, we also compared TinyMPC's trajectory tracking performance against SCS and ECOS on the rocket soft-landing problem. These tests assume the controller has $\text{Control Step}$ amount of time (in milliseconds) to solve the problem at every real time step (10 milliseconds). TinyMPC beats ECOS in this real-time task because of its ability to warm start each solve with the previous solution, and it performs more iterations per control step than SCS, allowing it to track the reference trajectory more reliably. -->
     </div>
 </figure>
@@ -91,8 +91,6 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
 ---
 
 ## Made by
-
-\*Main developers
 
 <div style="display: flex;">
     <div style="flex: 1;">
@@ -111,7 +109,7 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
             <a href="https://xkhainguyen.github.io/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/khai_nguyen.jpg" /></a>
         </p>
         <h4 align="center">
-            Khai Nguyen*
+            Khai Nguyen
         </h4>
         <!-- <h6 align="center">
             Main developer
@@ -122,7 +120,7 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
             <a href="https://samschoedel.com/" target="_blank"><img style="border-radius: 0%;" width="60%" src="media/contributors/sam_schoedel.jpg" /></a>
         </p>
         <h4 align="center">
-            Sam Schoedel*
+            Sam Schoedel
         </h4>
         <!-- <h6 align="center">
             Main developer
@@ -167,8 +165,9 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
     </div>
 </div>
 
+---
 
-## Cite the papers
+## Citing
 
 ```latex
 @inproceedings{tinympc,

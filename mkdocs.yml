@@ -11,13 +11,13 @@ nav:
     - Obtain the model: get-started/model.md
   - The Solver: 
     - Inside TinyMPC: solver/solver.md
-    # - Insights: solver/algorithm.md
+    - Background: solver/background.md
 
 theme:
   name: material
 
   icon:
-    logo: material/graph-outline
+    logo: fontawesome/solid/microchip
     repo: fontawesome/brands/github
     annotation: material/arrow-right-circle
 
