@@ -21,14 +21,21 @@ To get started simply choose your language interface and follow the easy install
 
     `git clone https://github.com/TinyMPC/TinyMPC.git`
 
-    Build TinyMPC from source
+    Navigate to root directory and run
 
-    `cd TinyMPC & cmake -S. - Bbuild & cmake --build build`
+    `cd TinyMPC && mkdir build && cd build`
+
+    Run CMake configure step
+
+    `cmake ..`
+
+    Build TinyMPC
+    
+    `cmake --build .`
 
     Run an example
 
-    `./build/examples/quadrotor_hovering`
-
+    `./examples/quadrotor_hovering`
 
 === "Python"
 
@@ -41,7 +48,6 @@ To get started simply choose your language interface and follow the easy install
     `cd tinympc-python & pip install -e .`
 
     Run the `interactive_cartpole.ipynb` example
-
 
 === "Julia"
 
