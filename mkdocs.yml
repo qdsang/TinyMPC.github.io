@@ -29,22 +29,25 @@ theme:
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
-      
+
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-      primary: teal
+      primary: custom
+      # primary: tinympc-default
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
+      # scheme: tinympc-slate
       scheme: slate
       toggle:
         icon: material/weather-night
         name: Switch to system preference
-      primary: teal
+      # primary: custom
+      # primary: tinympc-slate
 
   features:
     # - navigation.instant # Using navigation.instant disables table of contents auto-highlighting
