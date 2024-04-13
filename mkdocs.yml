@@ -36,7 +36,7 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-      primary: custom
+      # primary: custom
       # primary: tinympc-default
 
     # Palette toggle for dark mode
