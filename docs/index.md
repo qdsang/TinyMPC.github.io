@@ -18,7 +18,7 @@ TinyMPC is an open-source solver tailored for convex model-predictive control th
 
 [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
 [ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
-[CDC Paper :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
+[Conic Code Gen :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
 ---
