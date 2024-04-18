@@ -14,7 +14,7 @@ TinyMPC is an open-source solver tailored for convex model-predictive control th
 
 !!! success "" 
 
-    🏆 TinyMPC has been selected as a finalist for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/)! Thank you to everyone who has used TinyMPC and provided feedback!
+    🏆 TinyMPC has been nominated for Best Conference Paper Award, Best Student Paper Award, and Best Paper Award in Automation at [IEEE ICRA 2024](https://2024.ieee-icra.org/)! Thank you to everyone who has used TinyMPC and provided feedback!
 
 [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
 [ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
