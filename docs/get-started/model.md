@@ -1,6 +1,6 @@
 ---
 title: Model
-description: Obtain the model
+description: How to obtain the dynamics model
 ---
 
 ## Linearization

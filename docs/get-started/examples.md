@@ -39,39 +39,24 @@ To get started simply choose your language interface and follow the instructions
 === "Julia"
 
     ``` julia
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 === "MATLAB"
 
     ``` matlab
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 === "C++"
 
     ``` cpp
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 ## Set up the problem
 
-Check out [model](./model.md) to learn how to obtain A and B matrices.
+[Learn how to obtain discrete, linearized system dynamics](./model.md).
 
 === "Cart-pole"
 
@@ -121,34 +106,19 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
     === "Julia"
 
         ``` julia
-        #include <iostream>
-
-        int main(void) {
-        std::cout << "Hello world!" << std::endl;
-        return 0;
-        }
+        TODO
         ```
 
     === "MATLAB"
 
         ``` matlab
-        #include <iostream>
-
-        int main(void) {
-        std::cout << "Hello world!" << std::endl;
-        return 0;
-        }
+        TODO
         ```
 
     === "C++"
 
         ``` cpp
-        #include <iostream>
-
-        int main(void) {
-        std::cout << "Hello world!" << std::endl;
-        return 0;
-        }
+        TODO
         ```
 
 === "Quadrotor"
@@ -199,34 +169,19 @@ Check out [model](./model.md) to learn how to obtain A and B matrices.
     === "Julia"
 
         ``` julia
-        #include <iostream>
-
-        int main(void) {
-        std::cout << "Hello world!" << std::endl;
-        return 0;
-        }
+        TODO
         ```
 
     === "MATLAB"
 
         ``` matlab
-        #include <iostream>
-
-        int main(void) {
-        std::cout << "Hello world!" << std::endl;
-        return 0;
-        }
+        TODO
         ```
 
     === "C++"
 
         ``` cpp
-        #include <iostream>
-
-        int main(void) {
-        std::cout << "Hello world!" << std::endl;
-        return 0;
-        }
+        TODO
         ```
 
 ## Generate solver code
@@ -246,34 +201,19 @@ We generated low-level C++ code ready for deployment on embedded hardware.
 === "Julia"
 
     ``` julia
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 === "MATLAB"
 
     ``` matlab
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 === "C++"
 
     ``` cpp
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 ## Interact with solver code
@@ -323,32 +263,17 @@ We can also verify our program by interacting in high-level languages before dep
 === "Julia"
 
     ``` julia
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 === "MATLAB"
 
     ``` matlab
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
 
 === "C++"
 
     ``` cpp
-    #include <iostream>
-
-    int main(void) {
-    std::cout << "Hello world!" << std::endl;
-    return 0;
-    }
+    TODO
     ```
