@@ -5,21 +5,25 @@ description: How to obtain the dynamics model
 
 ## Linearization
 
-TinyMPC in its vanilla implementation can only handle linear dynamics, which means systems must be linearized about an equilibrium before being used by the solver. Extensions to TinyMPC allow the user to approximate a system's nonlinear dynamics by storing multiple linearizations, but we will start with only one.
+TinyMPC in its vanilla implementation can only handle linear dynamics, which means systems must be linearized about an equilibrium before being used by the solver. Extensions to TinyMPC allow the user to better approximate a system's nonlinear dynamics by storing multiple linearizations, but we will start here with only one.
 
-A discrete, linearized system is of the form $x_{k+1} = Ax_k + Bu_k$, where $x_k$ and $u_k$ are the state and control at the current time step, $A$ is the state-transition matrix, $B$ is the control or input matrix, and $x_{k+1}$ is the state at the next time step. For each of the examples given in [the previous page](./examples.md), the state-transition matrix $A$ and input matrix $B$ were computed from the system's continuous, nonlinear dynamics. (1)
-{.annotate}
+A discrete, linearized system takes the form $x_{k+1} = Ax_k + Bu_k$, where $x_k$ and $u_k$ are the state and control at the current time step, $A$ is the state-transition matrix, $B$ is the control or input matrix, and $x_{k+1}$ is the state at the next time step. Usually, this is derived from the continuous, nonlinear dynamics of the system, which takes the form $\dot{x} = f(x, u)$, where $f$ describes the instantaneous change in state at the current state and control input.
 
-1. The system still needs to be discretized even if it is already linear. This can be done with the matrix exponential or by the same methods shown for the nonlinear system below.
+This page describes how to derive the discrete, linearized system dynamics from the continuous, nonlinear system dynamics.
+
+<!-- For each of the examples given in [the previous page](./examples.md), the state-transition matrix $A$ and input matrix $B$ were computed from the system's continuous, nonlinear dynamics. (1)
+{.annotate} -->
+
+<!-- 1. The system still needs to be discretized even if it is already linear. This can be done with the matrix exponential or by the same methods shown for the nonlinear system below. -->
 
 ---
 
 ## Cart-pole example
 
-The continuous time dynamics for the cart-pole [have](https://courses.ece.ucsb.edu/ECE594/594D_W10Byl/hw/cartpole_eom.pdf){:target="_blank"} [been](https://www.matthewpeterkelly.com/tutorials/cartPole/index.html){:target="_blank"} [derived](https://underactuated.mit.edu/acrobot.html){:target="_blank"} [many](https://sharpneat.sourceforge.io/research/cart-pole/cart-pole-equations.html){:target="_blank"} [times](https://danielpiedrahita.wordpress.com/portfolio/cart-pole-control/){:target="_blank"}. For this example we'll use the convention from [this derivation](https://coneural.org/florian/papers/05_cart_pole.pdf){:target="_blank"}, where the pole is upright at $\theta=0$. If we ignore friction for this model, the only equations we care about in that derivation are (23) and (24). (1)
+The continuous time dynamics for the cart-pole [have](https://courses.ece.ucsb.edu/ECE594/594D_W10Byl/hw/cartpole_eom.pdf){:target="_blank"} [been](https://www.matthewpeterkelly.com/tutorials/cartPole/index.html){:target="_blank"} [derived](https://underactuated.mit.edu/acrobot.html){:target="_blank"} [many](https://sharpneat.sourceforge.io/research/cart-pole/cart-pole-equations.html){:target="_blank"} [times](https://danielpiedrahita.wordpress.com/portfolio/cart-pole-control/){:target="_blank"}. For this example we'll use the convention from [this derivation](https://coneural.org/florian/papers/05_cart_pole.pdf){:target="_blank"}, where the pole is upright at $\theta=0$. If we ignore friction, the only equations we care about in that derivation are (23) and (24). (1)
 {.annotate}
 
-1. If you're following along and want to use a cart-pole model that has friction, use equations (21) and (22).
+1. If you want to use a cart-pole model that has friction, use equations (21) and (22).
 
 Let's write those down in a dynamics function
 
@@ -131,4 +135,4 @@ Our integrator takes in the state and control at the current time step and integ
     ```
 
 
-Now all you have to do is save $A$ and $B$ and pass them to TinyMPC as shown in the problem setup section of [the examples page](examples.md).
+Now all you have to do is save $A$ and $B$ and pass them to TinyMPC as shown in the problem setup section of the [examples page](examples.md).
