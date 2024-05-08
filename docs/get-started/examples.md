@@ -9,7 +9,7 @@ We provide various robotic control examples, including the Crazyflie nano-quadro
 
 Check out our GitHub repository for [examples in C++](https://github.com/TinyMPC/TinyMPC/tree/main/examples).
 
-!!!note "Julia and MATLAB examples are under construction."
+<!-- !!!note "Julia and MATLAB examples are under construction." -->
 
 Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
 
@@ -33,13 +33,13 @@ TinyMPC requires four matrices and the number of time steps to use in the predic
 
     # Define necessary data
     A = np.array([[1.0, 0.01, 0.0, 0.0], # (1)
-                [0.0, 1.0, 0.039, 0.0],
-                [0.0, 0.0, 1.002, 0.01],
-                [0.0, 0.0, 0.458, 1.002]])
+                  [0.0, 1.0, 0.039, 0.0],
+                  [0.0, 0.0, 1.002, 0.01],
+                  [0.0, 0.0, 0.458, 1.002]])
     B = np.array([[0.0  ], # (2)
-                [0.02 ],
-                [0.0  ],
-                [0.067]])
+                  [0.02 ],
+                  [0.0  ],
+                  [0.067]])
     Q = np.diag([10.0, 1, 10, 1]) # (3)
     R = np.diag([1.0]) # (4)
 
@@ -142,12 +142,10 @@ To use TinyMPC as a controller, all we have to do is solve in a loop, setting th
 ### Solve
 
 ``` py
-import matplotlib.pyplot as plt
-
 # Loop for an arbitrary number of time steps
 Nsim = 1000
-xs = np.zeros((Nsim-N, Q.shape[0])) # History of states (for plotting)
-us = np.zeros((Nsim-N, R.shape[0])) # History of controls (for plotting)
+xs = np.zeros((Nsim-N, Q.shape[0])) # History of states for plotting
+us = np.zeros((Nsim-N, R.shape[0])) # History of controls for plotting
 for i in range(Nsim-N):
     prob.set_x0(x0) # Set the first state in the horizon
     solution = prob.solve() # Solve the problem
@@ -165,6 +163,8 @@ for i in range(Nsim-N):
 === "Cart-pole"
 
     ``` py
+    import matplotlib.pyplot as plt
+
     # Plot trajectory
     fig, axs = plt.subplots(2, 1, sharex=True)
     axs[0].plot(xs, label=["x (meters)", "theta (radians)", "x_dot (m/s)", "theta_dot (rad/s)"])
@@ -180,6 +180,8 @@ for i in range(Nsim-N):
 === "Quadrotor"
 
     ``` py
+    import matplotlib.pyplot as plt
+    
     # Plot trajectory
     fig, axs = plt.subplots(2, 1, sharex=True)
     axs[0].plot(xs[:,:3], label=["x", "y", "z"])
@@ -191,88 +193,68 @@ for i in range(Nsim-N):
     plt.show()
     ```
 
+---
 
-<!-- 
+## Code generation
 
-## Generate solver code
+Once the solver has been set up, the problem may be code generated into a directory of the user's choice. Source, CMake, and example main.cpp files are copied or generated in the new directory. The generated code is then compiled into a python module that can be imported and used to validate the behavior of the generated code before integrating it with the rest of your system.
 
-We generated low-level C++ code ready for deployment on embedded hardware.
+The following code generates a solver for a cartpole with control bounds of -0.5 and 0.5 Newtons, and limits the maximum number of iterations at each time step to 50. It puts everything in a folder called "generated_code".
 
-=== "Python"
+``` py
+import tinympc
+import numpy as np
 
-    ``` py
-    output_dir = tinympc_python_dir + "/generated_code"  # Path to the generated code
-    prob.tiny_codegen(tinympc_dir, output_dir)
-    prob.compile_lib(output_dir)
+A = np.array([[1.0, 0.01, 0.0, 0.0],
+              [0.0, 1.0, 0.039, 0.0],
+              [0.0, 0.0, 1.002, 0.01],
+              [0.0, 0.0, 0.458, 1.002]])
+B = np.array([[0.0  ],
+              [0.02 ],
+              [0.0  ],
+              [0.067]])
+Q = np.diag([10.0, 1, 10, 1])
+R = np.diag([1.0])
 
-    prob.load_lib(output_dir + "/build/tinympc/libtinympcShared" + os_ext)  # Load the library
-    ```
+N = 20
 
-=== "Julia"
+prob = tinympc.TinyMPC()
 
-    ``` julia
-    TODO
-    ```
+u_min = np.array([-0.5])
+u_max = np.array([0.5])
+prob.setup(A, B, Q, R, N, max_iter=50, u_min=u_min, u_max=u_max)
 
-=== "MATLAB"
+prob.codegen("generated_code", verbose=1)
+```
 
-    ``` matlab
-    TODO
-    ```
+### Validate with python
+
+TinyMPC will automatically compile the generated code into a new python module called `tinympcgen`, which will exist inside the output folder as a file with the name `tinympcgen.python-version-and-system-type.so`. To use it, just `import tinympcgen`, then set the reference trajectory if desired with `set_x_ref` and `set_u_ref`, set the initial state with `set_x0`, and then call `solve`. The python interpreter must have access to the newly generated module. This can be done by creating a python file with the following code in the generated directory, for example.
+
+``` py
+import numpy as np
+import tinympcgen
+import matplotlib.pyplot as plt
+
+tinympcgen.set_x_ref(np.array([1.0, 0, 0, 0])) # Set the goal position (1)
+tinympcgen.set_x0(np.array([0.5, 0, 0, 0])) # Set first state in horizon
+solution = tinympcgen.solve()
+```
+
+1. The reference trajectory can also be set for each time step in the horizon, which is what's normally done when tracking a reference trajectory instead of just stabilizing about a point. `set_x_ref` expects the entire trajectory reference to be a numpy array of the shape (nx x N) and `set_u_ref` expects a numpy array of the shape (nu x N-1). You can also just set the reference for a single time step as done here, and the python module will handle expanding it to the entire horizon.
 
 
-## Interact with solver code
+### Build with CMake
 
-We can also verify our program by interacting in high-level languages before deployment. This naturally provides a convenient software-in-the-loop (SIL) testing pipeline. Below is an example of running MPC in simulation, you can use any simulators.
+Finally, a single top-level CMake file is provided for building an example executable called `tiny_codegen_example`, which has its main function inside `tiny_main.cpp`. To build it, run
 
-=== "Python"
+``` bash
+cd generated_code/build # (1)
+cmake ..
+cmake --build .
+```
 
-    ``` py
-    x = [0.0] * n * N  # Initial state
-    u = [0.0] * m * (N - 1)  # List of control inputs in horizon
-    x_all = []  # List of all stored states
-    x_noise = x * 1
-    # Matrices for simulation
-    Anp = np.array(A).reshape((n, n)).transpose()
-    Bnp = np.array(B).reshape((n, m))
+1. The build folder should have been generated when TinyMPC built the python module, but if for some reason it did not, run `mkdir build` once inside the generated_code directory.
 
-    print("=== START INTERACTIVE MPC ===")
 
-    NSIM = 300
-    for i in range(NSIM):
-        # 1. Set initial state from measurement    
-        prob.set_x0(x_noise, 0)  # Set initial state to C code
-        
-        # 2. Set the reference state if needed    
-
-        # 3. Solve the problem
-        prob.solve(0)  # Call the solve in C code
-
-        # 4. Get the control input
-        prob.get_u(u, 0)  # Get the control input from C code
-
-        # 5. Simulate the dynamics    
-        x = Anp@np.array(x).reshape((n, 1))+ Bnp*np.array(u[0]) 
-
-        noise = np.random.normal(0, 0.01, (n, 1))
-        x_noise = x + noise
-        # print(f"X = {x}")
-        x = x.reshape(n).tolist() 
-        x_noise = x_noise.reshape(n).tolist() 
-        # print(f"X = {x}")
-        x_all.append(x)
-
-    print((x_all))
-    ```
-
-=== "Julia"
-
-    ``` julia
-    TODO
-    ```
-
-=== "MATLAB"
-
-    ``` matlab
-    TODO
-    ``` -->
+`tiny_main.cpp` only calls `tiny_solve`, but all of the convenience functions available in the `tiny_api.hpp` header can be used to set the reference trajectory and update the initial state. This should be used as a starting point for integrating TinyMPC with your own project.
