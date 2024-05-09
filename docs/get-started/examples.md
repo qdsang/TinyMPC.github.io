@@ -101,9 +101,9 @@ TinyMPC requires four matrices (A, B, Q, and R) and one number (N) to use. A and
         [-13.8353509, 15.2139209, 13.8784751, -15.2570451],
         [0.9873856, -0.3611820, -1.3921880, 0.7659845]])
 
-    Q = np.diag([100.0, 100.0, 100.0, 4.0, 4.0, 400.0, # (3)
-                4.0, 4.0, 4.0, 2.0408163, 2.0408163, 4.0]);
-    R = np.diag([400.0]*4); # (4)
+    Q = np.diag([1.0, 1.0, 1.0, 0.4, 0.4, 0.4, # (3)
+                0.4, 0.4, 0.4, 0.2, 0.2, 0.2]);
+    R = np.diag([1000.0]*4); # (4)
 
     N = 20 # (5)
 
@@ -146,8 +146,8 @@ To use TinyMPC as a controller, all we have to do is solve in a loop, setting th
 ### Solve
 
 ``` py
-# Loop for an arbitrary number of time steps
-Nsim = 600
+# Simulate for an arbitrary number of time steps
+Nsim = 350
 xs = np.zeros((Nsim-N, Q.shape[0])) # History of states for plotting
 us = np.zeros((Nsim-N, R.shape[0])) # History of controls for plotting
 for i in range(Nsim-N):
