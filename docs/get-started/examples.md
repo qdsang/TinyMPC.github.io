@@ -262,5 +262,10 @@ cmake --build .
 
 1. The build folder should have been generated when TinyMPC built the python module, but if for some reason it did not, run `mkdir build` once inside the generated_code directory.
 
+Run the example executable from the build directory
+
+``` bash
+./tiny_codegen_example
+```
 
 `tiny_main.cpp` only calls `tiny_solve`, but all of the convenience functions available in the `tiny_api.hpp` header can be used to set the reference trajectory and update the initial state. `tiny_main.cpp` should be used as a starting point for integrating TinyMPC with your own project.
