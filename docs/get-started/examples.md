@@ -3,7 +3,7 @@ title: Examples
 description: TinyMPC examples
 ---
 
-# How to use TinyMPC
+# Using TinyMPC
 
 Here we show how to use TinyMPC to control a cart-pole and 3D quadrotor with the python interface. Make sure you have [installed the package](installation.md).
 

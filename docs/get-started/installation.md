@@ -3,7 +3,7 @@ title: Installation
 description: Install TinyMPC
 ---
 
-# How to install TinyMPC
+# Installing TinyMPC
 
 A python interface is available that allows for [direct usage](./examples.md/#setup-problem) of TinyMPC. The interface can also be used to [generate C++ code](./examples.md/#code-generation) and an associated python module which allows for quick testing before integrating the generated code with your project. We provide examples for a few robots and have [firmware](https://github.com/RoboticExplorationLab/tinympc-crazyflie-firmware) for running TinyMPC on the Crazyflie 2.1 quadrotor.
 
