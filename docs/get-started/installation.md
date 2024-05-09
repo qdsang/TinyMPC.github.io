@@ -18,7 +18,7 @@ Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for 
 !!!note "Currently only available on Linux operating systems"
 
 ``` bash
-pip install tinympc
+pip install --upgrade tinympc
 ```
 
 Go to the [examples](./examples.md) page to see how to use TinyMPC.
