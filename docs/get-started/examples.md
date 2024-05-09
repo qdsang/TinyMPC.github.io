@@ -148,9 +148,9 @@ To use TinyMPC as a controller, all we have to do is solve in a loop, setting th
 ``` py
 # Simulate for an arbitrary number of time steps
 Nsim = 350
-xs = np.zeros((Nsim-N, Q.shape[0])) # History of states for plotting
-us = np.zeros((Nsim-N, R.shape[0])) # History of controls for plotting
-for i in range(Nsim-N):
+xs = np.zeros((Nsim, Q.shape[0])) # History of states for plotting
+us = np.zeros((Nsim, R.shape[0])) # History of controls for plotting
+for i in range(Nsim):
     prob.set_x0(x0) # Set the first state in the horizon
     solution = prob.solve() # Solve the problem
     x0 = A@x0 + B@solution["controls"] # Simulate the system (1)
@@ -263,4 +263,4 @@ cmake --build .
 1. The build folder should have been generated when TinyMPC built the python module, but if for some reason it did not, run `mkdir build` once inside the generated_code directory.
 
 
-`tiny_main.cpp` only calls `tiny_solve`, but all of the convenience functions available in the `tiny_api.hpp` header can be used to set the reference trajectory and update the initial state. This should be used as a starting point for integrating TinyMPC with your own project.
+`tiny_main.cpp` only calls `tiny_solve`, but all of the convenience functions available in the `tiny_api.hpp` header can be used to set the reference trajectory and update the initial state. `tiny_main.cpp` should be used as a starting point for integrating TinyMPC with your own project.
