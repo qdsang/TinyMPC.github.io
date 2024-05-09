@@ -163,6 +163,7 @@ for i in range(Nsim-N):
 
 ### Plot solution
 
+`pip install matplotlib` if not already installed.
 
 === "Cart-pole"
 
