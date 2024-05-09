@@ -234,7 +234,7 @@ prob.codegen("generated_code", verbose=1)
 
 ### Validate with python
 
-TinyMPC will automatically compile the generated code into a new python module called `tinympcgen`, which will exist inside the output folder as a file with the name `tinympcgen.python-version-and-system-type.so`. To use it, just `import tinympcgen`, then set the reference trajectory if desired with `set_x_ref` and `set_u_ref`, set the initial state with `set_x0`, and then call `solve`. The python interpreter must have access to the newly generated module. This can be done by creating a python file with the following code in the generated directory, for example.
+TinyMPC will automatically compile the generated code into a new python module called `tinympcgen`, which will exist inside the output folder as a file with the name `tinympcgen.python-version-and-system-type.so`. To use it, just `import tinympcgen`, then set the reference trajectory if desired with `set_x_ref` and `set_u_ref`, set the initial state with `set_x0`, and then call `solve`. The python interpreter must have access to the newly generated module. This can be done by creating new a python file with the following code in the generated directory, for example.
 
 ``` py
 import numpy as np
