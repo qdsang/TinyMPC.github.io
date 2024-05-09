@@ -61,7 +61,7 @@ Go to the [examples](./examples.md) page to see how to use TinyMPC.
 
 ## Build from source
 
-If you'd rather build from source, you can do so by following these steps: 
+If you'd like to build from source, you can do so by following these steps: 
 
 Clone the repository and build the project
 
