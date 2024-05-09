@@ -147,7 +147,7 @@ To use TinyMPC as a controller, all we have to do is solve in a loop, setting th
 
 ``` py
 # Loop for an arbitrary number of time steps
-Nsim = 1000
+Nsim = 600
 xs = np.zeros((Nsim-N, Q.shape[0])) # History of states for plotting
 us = np.zeros((Nsim-N, R.shape[0])) # History of controls for plotting
 for i in range(Nsim-N):
@@ -190,7 +190,7 @@ for i in range(Nsim-N):
     # Plot trajectory
     fig, axs = plt.subplots(2, 1, sharex=True)
     axs[0].plot(xs[:,:3], label=["x", "y", "z"])
-    axs[1].plot(us, label=["u1", "u2", "u3", "u4])
+    axs[1].plot(us, label=["u1", "u2", "u3", "u4"])
     axs[0].set_title("quadrotor trajectory over time")
     axs[1].set_xlabel("time steps (100Hz)")
     axs[0].legend()
