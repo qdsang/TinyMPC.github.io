@@ -11,7 +11,7 @@ description: TinyMPC description and overview
 </p>
 
 <p align="center" markdown>
-    [Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
+    [Get Started :material-arrow-right-box:](get-started/installation.md){.md-button}
 </p>
 
 TinyMPC is an open-source solver tailored for convex model-predictive control that delivers high speed computation with a small memory footprint. Implemented in C++ with minimal dependencies, TinyMPC is particularly suited for embedded control and robotics applications on resource-constrained platforms. TinyMPC can handle state and input bounds and second-order cone constraints. Python, Julia, and MATLAB interfaces are available to aid in generating code for embedded systems.

@@ -5,19 +5,16 @@ description: TinyMPC examples
 
 # How to use TinyMPC
 
-We provide various robotic control examples, including the Crazyflie nano-quadrotor, in high-level language interfaces. Make sure you have [installed the package](installation.md).
+Here we show how to use TinyMPC to control a cart-pole and 3D quadrotor with the python interface. Make sure you have [installed the package](installation.md).
 
-Check out our GitHub repository for [examples in C++](https://github.com/TinyMPC/TinyMPC/tree/main/examples).
-
+Check out our GitHub repository for [examples in C++](https://github.com/TinyMPC/TinyMPC/tree/main/examples), and visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
 <!-- !!!note "Julia and MATLAB examples are under construction." -->
-
-Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
 
 ---
 
-## Setup problem
+## Set up problem
 
-TinyMPC requires four matrices and the number of time steps to use in the prediction horizon. Two of the matrices, A and B, describe the linearized system dynamics and the other two, Q and R, are costs on the state and control inputs. [This page](./model.md) walks through obtaining discrete, linearized system dynamics from a nonlinear model of the system.
+TinyMPC requires four matrices (A, B, Q, and R) and one number (N) to use. A and B describe the linearized system dynamics and Q and R are the costs on the state and control inputs. N is the length of the prediction horizon (or the number of time steps in the problem). This page assumes you already have a discrete, linearized model of your system dynamics (A and B). [The next page](./model.md) walks through obtaining these starting from a nonlinear model.
 
 === "Cart-pole"
 
@@ -45,7 +42,7 @@ TinyMPC requires four matrices and the number of time steps to use in the predic
 
     N = 20 # (5)
 
-    # Setup the problem
+    # Set up the problem
     prob = tinympc.TinyMPC()
     prob.setup(A, B, Q, R, N)
 
@@ -55,8 +52,8 @@ TinyMPC requires four matrices and the number of time steps to use in the predic
 
     1. This is the state transition matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the state.
     2. This is the input or control matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the input.
-    3. This is the stage cost for the state, and defines how much to penalize the state for deviating from the reference state at each time step in the horizon.
-    4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon.
+    3. This is the stage cost for the state, and defines how much to penalize the state for deviating from the reference state at each time step in the horizon. Change this to modify the controller's behavior.
+    4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon. Change this to modify the controller's behavior.
     5. This is the length of the horizon, and can be anything greater than one. The problem size scales linearly with this variable.
 
 
@@ -107,14 +104,18 @@ TinyMPC requires four matrices and the number of time steps to use in the predic
 
     N = 20 # (5)
 
+    # Set up the problem
+    prob = tinympc.TinyMPC()
+    prob.setup(A, B, Q, R, N)
+
     # Define initial condition
     x0 = np.array([0.5, 1.3, -0.7, 0, 0, 0, 0, 0, 0, 0, 0, 0])
     ```
 
     1. This is the state transition matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the state.
     2. This is the input or control matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the input.
-    3. This is the stage cost for the state, and defines how much to penalize the state for deviating from the reference state at each time step in the horizon.
-    4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon.
+    3. This is the stage cost for the state, and defines how much to penalize the state for deviating from the reference state at each time step in the horizon. Change this to modify the controller's behavior.
+    4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon. Change this to modify the controller's behavior.
     5. This is the length of the horizon, and can be anything greater than one. The problem size scales linearly with this variable.
 
 ---
@@ -197,7 +198,7 @@ for i in range(Nsim-N):
 
 ## Code generation
 
-Once the solver has been set up, the problem may be code generated into a directory of the user's choice. Source, CMake, and example main.cpp files are copied or generated in the new directory. The generated code is then compiled into a python module that can be imported and used to validate the behavior of the generated code before integrating it with the rest of your system.
+Generating code looks very similar to what we just did. All we have to do is set up the problem like before and code can be generated into a specified directory. Source, CMake, and example main files are copied or generated in the new directory. The generated code is then compiled into a python module that can be imported and used to validate its behavior before integrating it with a system.
 
 The following code generates a solver for a cartpole with control bounds of -0.5 and 0.5 Newtons, and limits the maximum number of iterations at each time step to 50. It puts everything in a folder called "generated_code".
 
