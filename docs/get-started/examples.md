@@ -69,6 +69,9 @@ TinyMPC requires four matrices (A, B, Q, and R) and one number (N) to use. A and
 
 
     ``` py
+    import tinympc
+    import numpy as np
+
     # Define necessary data
     A = np.array([ # (1)
         [1.0, 0.0, 0.0, 0.0, 0.0245250, 0.0, 0.050, 0.0, 0.0, 0.0, 0.02044, 0.0],
