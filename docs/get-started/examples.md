@@ -244,6 +244,7 @@ import matplotlib.pyplot as plt
 tinympcgen.set_x_ref(np.array([1.0, 0, 0, 0])) # Set the goal position (1)
 tinympcgen.set_x0(np.array([0.5, 0, 0, 0])) # Set first state in horizon
 solution = tinympcgen.solve()
+print(solution["controls"])
 ```
 
 1. The reference trajectory can also be set for each time step in the horizon, which is what's normally done when tracking a reference trajectory instead of just stabilizing about a point. `set_x_ref` expects the entire trajectory reference to be a numpy array of the shape (nx x N) and `set_u_ref` expects a numpy array of the shape (nu x N-1). You can also just set the reference for a single time step as done here, and the python module will handle expanding it to the entire horizon.
