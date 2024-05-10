@@ -16,48 +16,6 @@ Check out our GitHub repository for [examples in C++](https://github.com/TinyMPC
 
 TinyMPC requires four matrices (A, B, Q, and R) and one number (N) to use. A and B describe the linearized system dynamics and Q and R are the costs on the state and control inputs. N is the length of the prediction horizon (or the number of time steps in the problem). This page assumes you already have a discrete, linearized model of your system dynamics (A and B). [The next page](./model.md) walks through obtaining these starting from a nonlinear model.
 
-=== "Cart-pole"
-
-    For the cart-pole, we use the linearized model of the discretized cart-pole dynamics to stabilize about the upright position. The state is the position of the cart, the angle of the pole, the velocity of the cart, and the angular velocity of the pole, which looks like $x = [p, \theta, v, \omega]^T$. The control input is a single force $u$ acting on the cart. (1)
-    {.annotate}
-
-    1. TinyMPC always produces a $\Delta u$ and $\Delta x$ about the linearization point. Because we linearized the cart-pole about an equilibrium position that required no control input, $\Delta u$ = $u$. Additionally, as discussed in [this page](./model.md), because we defined the coordinate frame of our cart-pole system such that the vertical equilibrium position (which is where we linearized) corresponds to a state of all zeros, $\Delta x$ = $x$. This is irrelevant for the following example, but is important to keep in mind when simulating the system with its full dynamics or applying a control input when the linearization point is not at $x=0$ or $u=0$.
-
-
-    ``` py
-    import tinympc
-    import numpy as np
-
-    # Define necessary data
-    A = np.array([[1.0, 0.01, 0.0, 0.0], # (1)
-                  [0.0, 1.0, 0.039, 0.0],
-                  [0.0, 0.0, 1.002, 0.01],
-                  [0.0, 0.0, 0.458, 1.002]])
-    B = np.array([[0.0  ], # (2)
-                  [0.02 ],
-                  [0.0  ],
-                  [0.067]])
-    Q = np.diag([10.0, 1, 10, 1]) # (3)
-    R = np.diag([1.0]) # (4)
-
-    N = 20 # (5)
-
-    # Set up the problem
-    prob = tinympc.TinyMPC()
-    prob.setup(A, B, Q, R, N)
-
-    # Define initial condition
-    x0 = np.array([0.5, 0, 0, 0])
-    ```
-
-    1. This is the state transition matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the state.
-    2. This is the input or control matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the input.
-    3. This is the stage cost for the state, and defines how much to penalize the state for deviating from the reference state at each time step in the horizon. Change this to modify the controller's behavior.
-    4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon. Change this to modify the controller's behavior.
-    5. This is the length of the horizon, and can be anything greater than one. The problem size scales linearly with this variable.
-
-
-
 === "Quadrotor"
 
     For the quadrotor, we use the linearized model of the discretized quadrotor dynamics to stabilize about a hovering position. The state is composed of twelve variables: the three dimensional position, orientation, translational velocity, and angular velocity, which looks like $x = [p_x, p_y, p_z, \theta_x, \theta_y, \theta_z, v_x, v_y, v_z, \omega_x, \omega_y, \omega_z]^T$. The control input is a four dimensional vector describing the thrust of each motor, and looks like $u = [u_1, u_2, u_3, u_4]^T$.
@@ -121,6 +79,47 @@ TinyMPC requires four matrices (A, B, Q, and R) and one number (N) to use. A and
     4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon. Change this to modify the controller's behavior.
     5. This is the length of the horizon, and can be anything greater than one. The problem size scales linearly with this variable.
 
+
+=== "Cart-pole"
+
+    For the cart-pole, we use the linearized model of the discretized cart-pole dynamics to stabilize about the upright position. The state is the position of the cart, the angle of the pole, the velocity of the cart, and the angular velocity of the pole, which looks like $x = [p, \theta, v, \omega]^T$. The control input is a single force $u$ acting on the cart. (1)
+    {.annotate}
+
+    1. TinyMPC always produces a $\Delta u$ and $\Delta x$ about the linearization point. Because we linearized the cart-pole about an equilibrium position that required no control input, $\Delta u$ = $u$. Additionally, as discussed in [this page](./model.md), because we defined the coordinate frame of our cart-pole system such that the vertical equilibrium position (which is where we linearized) corresponds to a state of all zeros, $\Delta x$ = $x$. This is irrelevant for the following example, but is important to keep in mind when simulating the system with its full dynamics or applying a control input when the linearization point is not at $x=0$ or $u=0$.
+
+
+    ``` py
+    import tinympc
+    import numpy as np
+
+    # Define necessary data
+    A = np.array([[1.0, 0.01, 0.0, 0.0], # (1)
+                  [0.0, 1.0, 0.039, 0.0],
+                  [0.0, 0.0, 1.002, 0.01],
+                  [0.0, 0.0, 0.458, 1.002]])
+    B = np.array([[0.0  ], # (2)
+                  [0.02 ],
+                  [0.0  ],
+                  [0.067]])
+    Q = np.diag([10.0, 1, 10, 1]) # (3)
+    R = np.diag([1.0]) # (4)
+
+    N = 20 # (5)
+
+    # Set up the problem
+    prob = tinympc.TinyMPC()
+    prob.setup(A, B, Q, R, N)
+
+    # Define initial condition
+    x0 = np.array([0.5, 0, 0, 0])
+    ```
+
+    1. This is the state transition matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the state.
+    2. This is the input or control matrix, which you get when linearizing the discretized version of your model's full nonlinear dynamics (in this case the cart-pole dynamics, described on [this page](./model.md)) with respect to the input.
+    3. This is the stage cost for the state, and defines how much to penalize the state for deviating from the reference state at each time step in the horizon. Change this to modify the controller's behavior.
+    4. This is the stage cost for the input, and defines how much to penalize the input for deviating from the reference control at each time step in the horizon. Change this to modify the controller's behavior.
+    5. This is the length of the horizon, and can be anything greater than one. The problem size scales linearly with this variable.
+
 ---
 
 ## Solve problem
@@ -165,6 +164,22 @@ for i in range(Nsim):
 
 `pip install matplotlib` if not already installed.
 
+=== "Quadrotor"
+
+    ``` py
+    import matplotlib.pyplot as plt
+    
+    # Plot trajectory
+    fig, axs = plt.subplots(2, 1, sharex=True)
+    axs[0].plot(xs[:,:3], label=["x", "y", "z"])
+    axs[1].plot(us, label=["u1", "u2", "u3", "u4"])
+    axs[0].set_title("quadrotor trajectory over time")
+    axs[1].set_xlabel("time steps (100Hz)")
+    axs[0].legend()
+    axs[1].legend()
+    plt.show()
+    ```
+
 === "Cart-pole"
 
     ``` py
@@ -182,22 +197,6 @@ for i in range(Nsim):
     ```
 
     
-=== "Quadrotor"
-
-    ``` py
-    import matplotlib.pyplot as plt
-    
-    # Plot trajectory
-    fig, axs = plt.subplots(2, 1, sharex=True)
-    axs[0].plot(xs[:,:3], label=["x", "y", "z"])
-    axs[1].plot(us, label=["u1", "u2", "u3", "u4"])
-    axs[0].set_title("quadrotor trajectory over time")
-    axs[1].set_xlabel("time steps (100Hz)")
-    axs[0].legend()
-    axs[1].legend()
-    plt.show()
-    ```
-
 ---
 
 ## Code generation
