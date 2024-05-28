@@ -4,17 +4,10 @@ title: Inside TinyMPC
 
 # Inside TinyMPC
 
-!!! note ""
-
-    :fontawesome-solid-microchip: At its core, TinyMPC accelerates and compresses the ADMM algorithm by exploiting the structure of the MPC problem.
-
 Our 2024 ICRA submission video provides a concise overview of the solver:
 
 [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 
-Visit our [GitHub Discussions](https://github.com/TinyMPC/discussions) page for any questions related to the solver!
-
----
 
 ## Problem formulation
 

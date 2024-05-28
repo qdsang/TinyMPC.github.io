@@ -10,16 +10,22 @@ description: TinyMPC description and overview
   <img width="50%" src="media/darkmode-banner.png#only-dark" />
 </p>
 
+<p align="center" markdown>
+    [Get Started :material-arrow-right-box:](get-started/installation.md){.md-button}
+</p>
+
 TinyMPC is an open-source solver tailored for convex model-predictive control that delivers high speed computation with a small memory footprint. Implemented in C++ with minimal dependencies, TinyMPC is particularly suited for embedded control and robotics applications on resource-constrained platforms. TinyMPC can handle state and input bounds and second-order cone constraints. Python, Julia, and MATLAB interfaces are available to aid in generating code for embedded systems.
 
 !!! success "" 
 
     🏆 TinyMPC won the Best Paper Award in Automation and was a finalist for Best Conference Paper Award and Best Student Paper Award at [IEEE ICRA 2024](https://2024.ieee-icra.org/awards-and-finalists/)! Thank you to everyone who has used TinyMPC and provided feedback!
 
-[Get Started :material-arrow-right-box:](get-started/examples.md){.md-button}
-[ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
-[CDC Paper :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
-[Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
+
+<p align="center" markdown>
+    [ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
+    [Conic Code Gen :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
+    [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
+</p>
 
 ---
 
