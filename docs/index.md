@@ -14,7 +14,7 @@ description: TinyMPC description and overview
     [Get Started :material-arrow-right-box:](get-started/installation.md){.md-button}
 </p>
 
-TinyMPC is an open-source solver tailored for convex model-predictive control that delivers high speed computation with a small memory footprint. Implemented in C++ with minimal dependencies, TinyMPC is particularly suited for embedded control and robotics applications on resource-constrained platforms. TinyMPC can handle state and input bounds and second-order cone constraints. Python, Julia, and MATLAB interfaces are available to aid in generating code for embedded systems.
+TinyMPC is an open-source solver tailored for convex model-predictive control that delivers high speed computation with a small memory footprint. Implemented in C++ with minimal dependencies, TinyMPC is particularly suited for embedded control and robotics applications on resource-constrained platforms. TinyMPC can handle state and input bounds and second-order cone constraints. A Python interface is available to aid in generating code for embedded systems.
 
 !!! success "" 
 
@@ -24,7 +24,7 @@ TinyMPC is an open-source solver tailored for convex model-predictive control th
 <p align="center" markdown>
     [ICRA Paper :simple-arxiv:](https://arxiv.org/abs/2310.16985){:target="_blank" .md-button}
     [Conic Code Gen :simple-arxiv:](https://arxiv.org/abs/2403.18149){:target="_blank" .md-button}
-    [Watch the Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
+    [Overview Video :fontawesome-brands-youtube:](https://www.youtube.com/watch?v=NKOrRyhcr6w){:target="_blank" .md-button}
 </p>
 
 ---
@@ -79,7 +79,7 @@ TinyMPC outperforms state-of-the-art solvers in terms of speed and memory footpr
     <div style="text-align: left;">
         <br>
         <br>
-        TinyMPC is now also capable of handling conic constraints! In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. TinyMPC achieves an average speed-up of 13x over SCS and 137x over ECOS.
+        TinyMPC is also capable of handling conic constraints. In (b), we benchmarked TinyMPC against two existing conic solvers with embedded support, [SCS](https://www.cvxgrp.org/scs/){:target="_blank"} and [ECOS](https://web.stanford.edu/~boyd/papers/ecos.html){:target="_blank"}, on the rocket soft-landing problem. TinyMPC achieves an average speed-up of 13x over SCS and 137x over ECOS.
         <!-- #gain, because of its lack of generality, TinyMPC is orders of magnitudes faster than SCS and ECOS. -->
     </div>
 </figure>
