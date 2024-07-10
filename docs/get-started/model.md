@@ -57,7 +57,6 @@ Let's write those down in a dynamics function
 === "Julia"
 
     ```julia
-    
     mc = 0.2 # mass of the cart (kg)
     mp = 0.1 # mass of the pole (kg)
     ℓ = 0.5 # distance to the center of mass (meters)
